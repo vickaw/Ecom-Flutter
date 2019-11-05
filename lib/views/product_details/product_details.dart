@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hello_shop/services/alert.service.dart';
 import 'package:hello_shop/services/cart.service.dart';
 import 'package:hello_shop/utils/utils.dart';
@@ -54,7 +55,14 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    ScreenUtil.instance = ScreenUtil(
+      width: screenWidth,
+      height: screenHeight,
+      allowFontScaling: true,
+    )..init(context);
+    final double pixelRatio = ScreenUtil.pixelRatio;
 
     final price = Text(
       "\$${widget.product.price}",
@@ -160,16 +168,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
       left: 0,
       right: 0,
       child: Container(
-        decoration: BoxDecoration(
-          border: Border(
-            top: BorderSide(
-              width: 1.0,
-              color: Colors.grey.withOpacity(0.1),
-            ),
-          ),
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
-        height: screenHeight * 0.1,
+        padding: EdgeInsets.symmetric(horizontal: pixelRatio >= 3.1 ? 20 : 10),
+        height: ScreenUtil().setHeight(80.0),
         width: MediaQuery.of(context).size.width,
         child: Row(
           children: <Widget>[
@@ -177,7 +177,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
               child: SizedBox(
                 height: 55.0,
                 child: CustomButton(
-                  text: "Share This    ",
+                  text: "Share This     ",
                   onPressed: () {},
                   iconData: Icons.arrow_upward,
                   isInverse: true,
@@ -189,7 +189,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
               child: SizedBox(
                 height: 55.0,
                 child: CustomButton(
-                  text: "Add to Cart    ",
+                  text: "Add to Cart        ",
                   onPressed: () {
                     var cartItem = {
                       'id': AppFunctions.getRandomId(),
@@ -215,7 +215,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
     );
 
     final slider = Container(
-      height: screenHeight * 0.4,
+      height: ScreenUtil().setHeight(pixelRatio >= 3.1 ? 300 : 200),
       width: double.infinity,
       // color: Colors.cyan,
       child: Carousel(
@@ -240,7 +240,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
     final tabBarView = Container(
       height: screenHeight * 0.3,
       padding: EdgeInsets.symmetric(horizontal: 20.0),
-      margin: EdgeInsets.only(top: 30.0),
+      margin: EdgeInsets.only(top: 30.0, bottom: 90.0),
       child: TabBarView(
         controller: tabController,
         children: <Widget>[
@@ -256,8 +256,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
     );
 
     final pageElements = Container(
-      // padding: EdgeInsets.symmetric(horizontal: 20.0),
-      // color: Colors.yellow,
       height: screenHeight * 0.9,
       child: SingleChildScrollView(
         child: Column(

@@ -20,7 +20,6 @@ class NotificationsPage extends StatelessWidget {
     final title = HeaderText(text: "Notifications");
 
     final list = Container(
-      height: MediaQuery.of(context).size.height * 0.83,
       child: ListView.builder(
         itemCount: notifications.length,
         itemBuilder: (BuildContext context, int index) {
@@ -35,7 +34,9 @@ class NotificationsPage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[title, list],
+          children: <Widget>[title, Expanded(
+            child: list,
+          )],
         ),
       ),
     );

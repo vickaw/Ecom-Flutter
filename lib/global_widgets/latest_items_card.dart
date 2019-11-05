@@ -16,14 +16,16 @@ class LatestItemsCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
-            latestItem.description,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20.0,
+          Expanded(
+            flex: 3,
+            child: Text(
+              latestItem.description,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20.0,
+              ),
             ),
           ),
-          SizedBox(height: 10.0),
           SizedBox(
             width: 150.0,
             child: CustomButton(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hello_shop/models/product.dart';
 import '../../router.dart';
 import '../../utils/colors.dart';
@@ -11,12 +12,19 @@ class MessageDetailsPage extends StatelessWidget {
   const MessageDetailsPage({Key key, this.name}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    ScreenUtil.instance = ScreenUtil(
+      width: screenWidth,
+      height: screenHeight,
+      allowFontScaling: true,
+    )..init(context);
 
     final initials = Padding(
       padding: EdgeInsets.only(right: 15.0),
       child: MaterialButton(
-        onPressed: () => Navigator.of(context).pushNamed(shopProfileViewRoute, arguments: name),
+        onPressed: () => Navigator.of(context)
+            .pushNamed(shopProfileViewRoute, arguments: name),
         shape: CircleBorder(),
         child: Container(
           height: 40.0,
@@ -76,17 +84,16 @@ class MessageDetailsPage extends StatelessWidget {
       shape: CircleBorder(),
       elevation: 10.0,
       child: Container(
-        padding: EdgeInsets.all(10.0),
-        height: 80.0,
-        width: 80.0,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-        ),
-        child: Center(
-          heightFactor: 35.0,
-          child: Image.asset(products[0].photos[0], fit: BoxFit.cover),
-        )
-      ),
+          padding: EdgeInsets.all(10.0),
+          height: 80.0,
+          width: 80.0,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+          ),
+          child: Center(
+            heightFactor: 35.0,
+            child: Image.asset(products[0].photos[0], fit: BoxFit.cover),
+          )),
     );
 
     final orderDetails = Container(
@@ -123,7 +130,7 @@ class MessageDetailsPage extends StatelessWidget {
     );
 
     final product = Container(
-      height: screenHeight * 0.16,
+      height: ScreenUtil().setHeight(110),
       color: Colors.white,
       child: Column(
         children: <Widget>[hr, productDetails],
@@ -155,7 +162,6 @@ class MessageDetailsPage extends StatelessWidget {
     final chatContainer = Container(
       margin: EdgeInsets.only(top: 20.0),
       padding: EdgeInsets.only(left: 20.0),
-      height: screenHeight * 0.63,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -172,48 +178,63 @@ class MessageDetailsPage extends StatelessWidget {
       ),
     );
 
-    final bottom = Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
-      height: screenHeight * 0.078,
-      color: Colors.white,
-      child: Row(
-        children: <Widget>[
-          MaterialButton(
-            color: Color(0xFFE4E3E8),
-            onPressed: () {},
-            shape: CircleBorder(),
-            child: Icon(
-              Icons.add,
-              color: CustomColors.primaryDarkColor,
-            ),
-          ),
-          Flexible(
-            child: TextField(
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: "Type your message",
+    final bottom = Positioned(
+      bottom: 0,
+      left: 0,
+      right: 0,
+      child: Container(
+        height: ScreenUtil().setHeight(50),
+        color: Colors.white,
+        child: Row(
+          children: <Widget>[
+            MaterialButton(
+              color: Color(0xFFE4E3E8),
+              onPressed: () {},
+              shape: CircleBorder(),
+              child: Icon(
+                Icons.add,
+                color: CustomColors.primaryDarkColor,
               ),
-              cursorColor: Theme.of(context).primaryColor,
             ),
-          ),
-          MaterialButton(
-            color: CustomColors.primaryColor,
-            onPressed: () {},
-            shape: CircleBorder(),
-            child: Icon(
-              Icons.arrow_upward,
-              color: Colors.white,
+            Expanded(
+              child: TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Type your message",
+                ),
+                cursorColor: Theme.of(context).primaryColor,
+              ),
             ),
-          ),
-        ],
+            MaterialButton(
+              color: CustomColors.primaryColor,
+              onPressed: () {},
+              shape: CircleBorder(),
+              child: Icon(
+                Icons.arrow_upward,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
       ),
     );
-
     return Scaffold(
       appBar: appBar,
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[product, chatContainer, bottom],
+      body: Container(
+        height: screenHeight,
+        width: screenWidth,
+        child: Stack(
+          children: <Widget>[
+            Column(
+              children: <Widget>[
+                product,
+                Expanded(
+                  child: SingleChildScrollView(child: chatContainer),
+                )
+              ],
+            ),
+            bottom
+          ],
         ),
       ),
     );

@@ -15,7 +15,6 @@ class _CategoriesPageState extends State<CategoriesPage> {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
     final appBar = AppBar(
       leading: Container(),
       actions: <Widget>[
@@ -81,7 +80,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(child: title),
-            Container(height: screenHeight * 0.83, child: content,),
+           Expanded(
+             child:  Container(child: content),
+           )
           ],
         ),
       ),

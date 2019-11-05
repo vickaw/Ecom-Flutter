@@ -61,7 +61,7 @@ class MessagesPage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[title, searchBar, list],
+          children: <Widget>[title, searchBar, Expanded(child: list,)],
         ),
       ),
     );
