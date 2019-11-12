@@ -51,11 +51,14 @@ class CarouselState extends State<Carousel> {
       },
       controller: _controller,
       children: widget.images.map((image) {
-        return Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: image,
-              fit: BoxFit.cover,
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: image,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
         );
