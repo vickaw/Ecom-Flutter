@@ -43,8 +43,8 @@ class LoginPage extends StatelessWidget {
 
     final bottomText = Container(
       padding: EdgeInsets.only(top: 70.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
             "Don't have an account?",
@@ -54,6 +54,7 @@ class LoginPage extends StatelessWidget {
               color: Colors.grey.withOpacity(0.8),
             ),
           ),
+          SizedBox(width: 5.0,),
           GestureDetector(
             onTap: () {
               changeTab(1);

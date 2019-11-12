@@ -72,7 +72,7 @@ class _SignUpPageState extends State<SignUpPage> {
       child: Column(
         children: <Widget>[
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Checkbox(
                 activeColor: Theme.of(context).primaryColor,
@@ -87,27 +87,31 @@ class _SignUpPageState extends State<SignUpPage> {
                 "I agree to the",
                 style: defultTextStyle,
               ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+              SizedBox(width: 5.0,),
               GestureDetector(
                 onTap: () => _showTermsPolicyDialog(context, false),
                 child: Text("Terms of Service", style: linkTextStyle),
               ),
               Text(" and ", style: defultTextStyle),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(width: 16.0,),
               GestureDetector(
                 onTap: () => _showTermsPolicyDialog(context, true),
                 child: Text("Privacy Policy.", style: linkTextStyle),
               )
             ],
-          )
+          ),
+          Container(height: 60.0,)
         ],
       ),
     );
 
     return SingleChildScrollView(
+      padding: EdgeInsets.only(bottom: 20.0),
       child: Column(
         children: <Widget>[form, formSpace, submitBtn, bottomText],
       ),
