@@ -58,11 +58,11 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
     final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
     ScreenUtil.instance = ScreenUtil(
-      width: screenWidth,
-      height: screenHeight,
+      width: 388,
+      height: 1600,
       allowFontScaling: true,
-    )..init(context);
-    final double pixelRatio = ScreenUtil.pixelRatio;
+    )..init(context);    
+     final multiplier = screenHeight / screenWidth;
 
     final price = Text(
       "\$${widget.product.price}",
@@ -168,8 +168,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
       left: 0,
       right: 0,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: pixelRatio >= 3.1 ? 20 : 10),
-        height: ScreenUtil().setHeight(80.0),
+        margin: EdgeInsets.only(bottom: 10.0),
+        padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setHeight(18) * multiplier),
+        // height: ScreenUtil().setHeight(80.0),
         width: MediaQuery.of(context).size.width,
         child: Row(
           children: <Widget>[
@@ -215,7 +216,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
     );
 
     final slider = Container(
-      height: ScreenUtil().setHeight(pixelRatio >= 3.1 ? 300 : 200),
+      height: ScreenUtil().setHeight(320) * multiplier,
       width: double.infinity,
       // color: Colors.cyan,
       child: Carousel(
@@ -240,7 +241,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
     final tabBarView = Container(
       height: screenHeight * 0.3,
       padding: EdgeInsets.symmetric(horizontal: 20.0),
-      margin: EdgeInsets.only(top: 30.0, bottom: 90.0),
+      margin: EdgeInsets.only(top: 30.0, bottom: 20.0),
       child: TabBarView(
         controller: tabController,
         children: <Widget>[

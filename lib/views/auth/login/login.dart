@@ -6,8 +6,13 @@ import '../../../global_widgets/form_container.dart';
 import '../../../router.dart';
 
 class LoginPage extends StatelessWidget {
+  final Function(int) changeTab;
+
+  const LoginPage({Key key, this.changeTab}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+
     final emailField = CustomFormField(
       labelText: 'USERNAME / EMAIL',
       icon: LineIcons.user,
@@ -31,17 +36,38 @@ class LoginPage extends StatelessWidget {
       ),
     );
 
-    final submitBtn = CustomButton(text: "Log In", onPressed: () => Navigator.of(context).pushNamed(homeViewRoute));
+    final submitBtn = CustomButton(
+      text: "Log In",
+      onPressed: () => Navigator.of(context).pushNamed(homeViewRoute),
+    );
 
     final bottomText = Container(
       padding: EdgeInsets.only(top: 70.0),
-      child: Text(
-        "Don't have an account? Swipe right to \n create a new account.",
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontWeight: FontWeight.w600,
-          color: Colors.grey.withOpacity(0.8),
-        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            "Don't have an account?",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+              color: Colors.grey.withOpacity(0.8),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              changeTab(1);
+            },
+            child: Text(
+              "Create",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black54,
+              ),
+            ),
+          ),
+        ],
       ),
     );
 

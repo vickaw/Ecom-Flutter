@@ -5,7 +5,7 @@ import 'utils.dart';
 class AppTextStyles {
   // Tab
   static const tabBarTextStyle = const TextStyle(
-    fontSize: 36.0, // 32.0,
+    fontSize: 32.0,
     fontWeight: FontWeight.w900,
     fontFamily: AppFonts.secondaryFont,
   );

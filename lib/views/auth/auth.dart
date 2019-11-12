@@ -6,11 +6,12 @@ import 'widgets/tab_bar_head.dart';
 import '../../utils/colors.dart';
 
 class AuthPage extends StatefulWidget {
+  const AuthPage({Key key}) : super(key: key);
   @override
-  _AuthPageState createState() => _AuthPageState();
+  State createState() => AuthPageState();
 }
 
-class _AuthPageState extends State<AuthPage>
+class AuthPageState extends State<AuthPage>
     with SingleTickerProviderStateMixin {
   TabController tabController;
   List<String> tabs = ["Log In", "Sign Up", "Forgot Password"];
@@ -19,6 +20,18 @@ class _AuthPageState extends State<AuthPage>
   void initState() {
     super.initState();
     tabController = TabController(vsync: this, length: tabs.length);
+  }
+
+  void switchToPage(int page) {
+    tabController.animateTo(
+      page,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.ease,
+    );
+  }
+
+  void sayHello() {
+    print("Hello WORLD");
   }
 
   @override
@@ -32,8 +45,8 @@ class _AuthPageState extends State<AuthPage>
       unselectedLabelColor: CustomColors.headerColor.withOpacity(0.3),
       isScrollable: true,
       tabs: tabs
-      .map((tabName) => Tab(child: TabBarHead(tabBarName: tabName)))
-      .toList(),
+          .map((tabName) => Tab(child: TabBarHead(tabBarName: tabName)))
+          .toList(),
     );
 
     final tabBarView = Container(
@@ -42,7 +55,13 @@ class _AuthPageState extends State<AuthPage>
       margin: EdgeInsets.only(top: 30.0),
       child: TabBarView(
         controller: tabController,
-        children: <Widget>[LoginPage(), SignUpPage(), ForgotPasswordPage()],
+        children: <Widget>[
+          LoginPage(changeTab: (int page) {
+            switchToPage(page);
+          }),
+          SignUpPage(),
+          ForgotPasswordPage()
+        ],
       ),
     );
 

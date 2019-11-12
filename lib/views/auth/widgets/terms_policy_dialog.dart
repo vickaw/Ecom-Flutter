@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hello_shop/utils/lorem_ipsum.dart';
 import 'package:line_icons/line_icons.dart';
 import '../../../utils/colors.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 class TermsAndPolicyDialog extends StatelessWidget {
   final bool isPrivacyPolicy;
@@ -29,7 +30,7 @@ class TermsAndPolicyDialog extends StatelessWidget {
             isPrivacyPolicy ? "Privacy Policy" : "Terms of Service",
             style: TextStyle(
               fontWeight: FontWeight.w900,
-              fontSize: 30.0,
+              fontSize: 23.0,
               color: Colors.grey,
             ),
           ),
@@ -43,10 +44,8 @@ class TermsAndPolicyDialog extends StatelessWidget {
 
     final content = SingleChildScrollView(
       padding: EdgeInsets.only(top: 20.0),
-      child: Text(
-        LoremIpsum.loremIpsum,
-        style: TextStyle(
-            fontSize: 16.0, fontWeight: FontWeight.w500, color: Colors.grey),
+      child: Html(
+        data: isPrivacyPolicy ? LoremIpsum.privacyPolicy : LoremIpsum.termsOfService,
       ),
     );
 

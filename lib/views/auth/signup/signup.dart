@@ -6,7 +6,13 @@ import '../../../global_widgets/custom_form_field.dart';
 import '../../../global_widgets/form_container.dart';
 import '../../../router.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
+  @override
+  _SignUpPageState createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     final emailField = CustomFormField(
@@ -47,7 +53,9 @@ class SignUpPage extends StatelessWidget {
       ),
     );
 
-    final submitBtn = CustomButton(text: "Sign Up", onPressed: () => Navigator.of(context).pushNamed(homeViewRoute));
+    final submitBtn = CustomButton(
+        text: "Sign Up",
+        onPressed: () => Navigator.of(context).pushNamed(homeViewRoute));
 
     final defultTextStyle = TextStyle(
       fontWeight: FontWeight.w600,
@@ -63,15 +71,29 @@ class SignUpPage extends StatelessWidget {
       padding: EdgeInsets.only(top: 70.0),
       child: Column(
         children: <Widget>[
-          Text(
-            "By creating an account, you agree to our",
-            style: defultTextStyle,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Checkbox(
+                activeColor: Theme.of(context).primaryColor,
+                value: isChecked,
+                onChanged: (value) {
+                  setState(() {
+                    isChecked = value;
+                  });
+                },
+              ),
+              Text(
+                "I agree to the",
+                style: defultTextStyle,
+              ),
+            ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               GestureDetector(
-                onTap: () =>  _showTermsPolicyDialog(context, false),
+                onTap: () => _showTermsPolicyDialog(context, false),
                 child: Text("Terms of Service", style: linkTextStyle),
               ),
               Text(" and ", style: defultTextStyle),
