@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hello_shop/utils/colors.dart';
 import '../models/product.dart';
 import '../router.dart';
@@ -9,12 +10,24 @@ class SearchProductCard extends StatelessWidget {
   const SearchProductCard({Key key, @required this.product}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    ScreenUtil.instance = ScreenUtil(
+      width: 388,
+      height: 1600,
+      allowFontScaling: true,
+    )..init(context);
+    final multiplier = screenHeight / screenWidth;
+
     final br = BorderRadius.circular(12.0);
-    final image = Center(
-      child: Image.asset(
-        product.photos[0],
-        fit: BoxFit.cover,
-        height: MediaQuery.of(context).size.height * 0.15,
+    final image = Padding(
+      padding: EdgeInsets.symmetric(horizontal: 8.0),
+      child: Center(
+        child: Image.asset(
+          product.photos[0],
+          fit: BoxFit.contain,
+          height: ScreenUtil().setHeight(120) * multiplier,
+        ),
       ),
     );
 
@@ -70,19 +83,24 @@ class SearchProductCard extends StatelessWidget {
       color: Colors.white,
       child: InkWell(
         borderRadius: br,
-        onTap: () => Navigator.of(context)
-            .pushNamed(productDetailsViewRoute, arguments: product),
+        onTap: () => Navigator.of(context).pushNamed(
+          productDetailsViewRoute,
+          arguments: product,
+        ),
         child: Container(
           padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               image,
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 15.0),
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height: 5.0,),
+                    SizedBox(
+                      height: 5.0,
+                    ),
                     name,
                     priceRating,
                   ],
