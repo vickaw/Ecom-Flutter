@@ -83,29 +83,42 @@ class _SignUpPageState extends State<SignUpPage> {
                   });
                 },
               ),
-              Text(
-                "I agree to the",
-                style: defultTextStyle,
-              ),
-              SizedBox(width: 5.0,),
-              GestureDetector(
-                onTap: () => _showTermsPolicyDialog(context, false),
-                child: Text("Terms of Service", style: linkTextStyle),
-              ),
-              Text(" and ", style: defultTextStyle),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              SizedBox(width: 16.0,),
-              GestureDetector(
-                onTap: () => _showTermsPolicyDialog(context, true),
-                child: Text("Privacy Policy.", style: linkTextStyle),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        "I agree to the",
+                        style: defultTextStyle,
+                      ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      GestureDetector(
+                        onTap: () => _showTermsPolicyDialog(context, false),
+                        child: Text("Terms of Service", style: linkTextStyle),
+                      ),
+                      Text(" and ", style: defultTextStyle),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: () => _showTermsPolicyDialog(context, true),
+                        child: Text("Privacy Policy.", style: linkTextStyle),
+                      )
+                    ],
+                  )
+                ],
               )
             ],
           ),
-          Container(height: 60.0,)
+          Container(
+            height: 60.0,
+          )
         ],
       ),
     );
