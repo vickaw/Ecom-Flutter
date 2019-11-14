@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_shop/services/alert.service.dart';
 import '../../../global_widgets/custom_button.dart';
 import 'package:line_icons/line_icons.dart';
 import '../../../global_widgets/custom_form_field.dart';
@@ -12,16 +13,21 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController email = new TextEditingController();
+    TextEditingController password = new TextEditingController();
+    AlertService alert = new AlertService();
 
     final emailField = CustomFormField(
       labelText: 'USERNAME / EMAIL',
       icon: LineIcons.user,
+      controller: email,
     );
 
     final passwordField = CustomFormField(
       labelText: 'PASSWORD',
       icon: LineIcons.lock,
       isPasswordField: true,
+      controller: password,
     );
 
     final formSpace = SizedBox(height: 20.0);
@@ -38,7 +44,30 @@ class LoginPage extends StatelessWidget {
 
     final submitBtn = CustomButton(
       text: "Log In",
-      onPressed: () => Navigator.of(context).pushNamed(homeViewRoute),
+      onPressed: () {
+        // Validation
+        if (email.text.isEmpty) {
+          alert.showAlert(
+            context: context,
+            message: "Email is required!",
+            type: AlertType.error,
+          );
+        } else if (!email.text.contains('@')) {
+          alert.showAlert(
+            context: context,
+            message: "Email is invalid",
+            type: AlertType.error,
+          );
+        } else if (password.text.isEmpty) {
+          alert.showAlert(
+            context: context,
+            message: "Password is required!",
+            type: AlertType.error,
+          );
+        } else {
+          Navigator.of(context).pushNamed(homeViewRoute);
+        }
+      },
     );
 
     final bottomText = Container(
@@ -54,7 +83,9 @@ class LoginPage extends StatelessWidget {
               color: Colors.grey.withOpacity(0.8),
             ),
           ),
-          SizedBox(width: 5.0,),
+          SizedBox(
+            width: 5.0,
+          ),
           GestureDetector(
             onTap: () {
               changeTab(1);
