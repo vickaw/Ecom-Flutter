@@ -26,7 +26,7 @@ class SearchProductCard extends StatelessWidget {
         child: Image.asset(
           product.photos[0],
           fit: BoxFit.contain,
-          height: ScreenUtil().setHeight(120) * multiplier,
+          height: ScreenUtil().setHeight(100) * multiplier,
         ),
       ),
     );
