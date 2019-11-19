@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_shop/services/alert.service.dart';
 import 'package:hello_shop/views/auth/widgets/terms_policy_dialog.dart';
 import '../../../global_widgets/custom_button.dart';
 import 'package:line_icons/line_icons.dart';
@@ -13,28 +14,38 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   bool isChecked = false;
+  TextEditingController email = new TextEditingController();
+  TextEditingController name = new TextEditingController();
+  TextEditingController password = new TextEditingController();
+  TextEditingController confirmPassword = new TextEditingController();
+  AlertService alert = new AlertService();
+
   @override
   Widget build(BuildContext context) {
     final emailField = CustomFormField(
       labelText: 'EMAIL ADDRESS',
       icon: LineIcons.envelope,
+      controller: email,
     );
 
     final usernameField = CustomFormField(
       labelText: 'NAME',
       icon: LineIcons.user,
+      controller: name,
     );
 
     final passwordField = CustomFormField(
       labelText: 'PASSWORD',
       icon: LineIcons.lock,
       isPasswordField: true,
+      controller: password,
     );
 
     final confirmPasswordField = CustomFormField(
       labelText: 'CONFIRM PASSWORD',
       icon: Icons.lock,
       isPasswordField: true,
+      controller: confirmPassword,
     );
 
     final formSpace = SizedBox(height: 20.0);
@@ -54,8 +65,49 @@ class _SignUpPageState extends State<SignUpPage> {
     );
 
     final submitBtn = CustomButton(
-        text: "Sign Up",
-        onPressed: () => Navigator.of(context).pushNamed(homeViewRoute));
+      text: "Sign Up",
+      onPressed: () {
+        if (email.text.isEmpty) {
+          alert.showAlert(
+            context: context,
+            message: "Email is required!",
+            type: AlertType.error,
+          );
+        } else if (!email.text.contains('@')) {
+          alert.showAlert(
+            context: context,
+            message: "Email is invalid",
+            type: AlertType.error,
+          );
+        } else if (name.text.isEmpty) {
+          alert.showAlert(
+            context: context,
+            message: "Name is required!",
+            type: AlertType.error,
+          );
+        } else if (password.text.isEmpty) {
+          alert.showAlert(
+            context: context,
+            message: "Password is required!",
+            type: AlertType.error,
+          );
+        } else if (confirmPassword.text != password.text) {
+          alert.showAlert(
+            context: context,
+            message: "Passwords do not match",
+            type: AlertType.error,
+          );
+        } else if (!isChecked) {
+          alert.showAlert(
+            context: context,
+            message: "You have to agree to the Terms of Service and the Privacy Policy",
+            type: AlertType.error,
+          );
+        } else {
+          Navigator.of(context).pushNamed(homeViewRoute);
+        }
+      },
+    );
 
     final defultTextStyle = TextStyle(
       fontWeight: FontWeight.w600,
@@ -68,7 +120,6 @@ class _SignUpPageState extends State<SignUpPage> {
     );
 
     final bottomText = Container(
-      padding: EdgeInsets.only(top: 70.0),
       child: Column(
         children: <Widget>[
           Row(
@@ -126,7 +177,7 @@ class _SignUpPageState extends State<SignUpPage> {
     return SingleChildScrollView(
       padding: EdgeInsets.only(bottom: 20.0),
       child: Column(
-        children: <Widget>[form, formSpace, submitBtn, bottomText],
+        children: <Widget>[form, formSpace, bottomText, submitBtn],
       ),
     );
   }
