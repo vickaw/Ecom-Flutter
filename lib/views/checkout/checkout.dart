@@ -52,7 +52,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
 
     final content = Container(
       padding: EdgeInsets.symmetric(horizontal: 20.0),
-      height: screenHeight * 0.778,
+      height: screenHeight * 0.75,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,8 +72,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
 
     final bottom = Container(
       color: Colors.white,
-      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-      height: screenHeight * 0.12,
+      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+      height: screenHeight * 0.15,
       width: double.infinity,
       child: Row(
         children: <Widget>[
