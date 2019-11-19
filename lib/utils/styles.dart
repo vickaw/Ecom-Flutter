@@ -35,7 +35,7 @@ class AppTextStyles {
   );
 
   static const headerTextTextStyle = const TextStyle(
-    fontSize: 36.0,
+    fontSize: 24.0,
     fontWeight: FontWeight.w900,
     fontFamily: AppFonts.secondaryFont,
     color: CustomColors.primaryDarkColor
