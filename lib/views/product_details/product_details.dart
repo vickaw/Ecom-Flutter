@@ -168,7 +168,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
       left: 0,
       right: 0,
       child: Container(
-        margin: EdgeInsets.only(bottom: 10.0),
+        margin: EdgeInsets.only(bottom: 20.0),
         padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setHeight(18) * multiplier),
         // height: ScreenUtil().setHeight(80.0),
         width: MediaQuery.of(context).size.width,
