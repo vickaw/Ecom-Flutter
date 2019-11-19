@@ -89,7 +89,7 @@ class _CartListState extends State<CartList> {
     final checkoutBtn = SizedBox(
       height: 55.0,
       child: CustomButton(
-        text: "Checkout",
+        text: "Checkout       ",
         onPressed: () => Navigator.of(context).pushNamed(checkoutViewRoute),
       ),
     );
@@ -233,8 +233,33 @@ class _CartListState extends State<CartList> {
       ),
     );
 
+    final bg = Container(
+      alignment: AlignmentDirectional.centerStart,
+      color: Colors.red,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10.0),
+        child: Icon(
+          Icons.delete,
+          color: Colors.white,
+        ),
+      ),
+    );
+
+    final bgSec = Container(
+      alignment: AlignmentDirectional.centerEnd,
+      color: Colors.red,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10.0),
+        child: Icon(
+          Icons.delete,
+          color: Colors.white,
+        ),
+      ),
+    );
+
     return Dismissible(
-      background: Container(color: Colors.red),
+      secondaryBackground: bgSec,
+      background: bg,
       key: Key(product.id.toString()),
       onDismissed: (direction) async {
         await CartService().removeItemFromCart(product.id);
