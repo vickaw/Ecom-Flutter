@@ -84,16 +84,17 @@ class MessageDetailsPage extends StatelessWidget {
       shape: CircleBorder(),
       elevation: 10.0,
       child: Container(
-          padding: EdgeInsets.all(10.0),
-          height: 80.0,
-          width: 80.0,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-          ),
-          child: Center(
-            heightFactor: 35.0,
-            child: Image.asset(products[0].photos[0], fit: BoxFit.cover),
-          )),
+        padding: EdgeInsets.all(10.0),
+        height: 80.0,
+        width: 80.0,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+        ),
+        child: Center(
+          heightFactor: 35.0,
+          child: Image.asset(products[0].photos[0], fit: BoxFit.cover),
+        ),
+      ),
     );
 
     final orderDetails = Container(

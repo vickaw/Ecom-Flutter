@@ -150,16 +150,19 @@ class _CartListState extends State<CartList> {
   }) {
     final size = MediaQuery.of(context).size.height * 0.16;
     final circularImage = Container(
-      padding: EdgeInsets.all(20.0),
+      padding: EdgeInsets.all(10.0),
       height: size,
       width: size,
       decoration: BoxDecoration(
         color: Colors.white,
         shape: BoxShape.circle,
       ),
-      child: Image.asset(
-        product.photo,
-        fit: BoxFit.cover,
+      child: Center(
+        heightFactor: 35.0,
+        child: Image.asset(
+          product.photo,
+          fit: BoxFit.cover,
+        ),
       ),
     );
 
