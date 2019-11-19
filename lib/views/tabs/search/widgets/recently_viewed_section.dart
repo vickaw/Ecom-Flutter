@@ -43,7 +43,7 @@ class RecentlyViewedSection extends StatelessWidget {
         fontSize: 14.0,
         fontWeight: FontWeight.bold
       ),
-      maxLines: 2,
+      maxLines: 1,
       overflow: TextOverflow.ellipsis,
     );
     final price = Text(
