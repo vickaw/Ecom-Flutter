@@ -183,7 +183,7 @@ class MessageDetailsPage extends StatelessWidget {
       left: 0,
       right: 0,
       child: Container(
-        height: ScreenUtil().setHeight(50),
+        height: ScreenUtil().setHeight(80),
         color: Colors.white,
         child: Row(
           children: <Widget>[
