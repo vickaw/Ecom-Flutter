@@ -143,7 +143,7 @@ class MessageDetailsPage extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.6,
       padding: EdgeInsets.all(20.0),
       child: Text(
-        "Dear customer, your order has been shipped. Please see below for tracking number. \n\n\n Your parcel should arrive between 10 - 20 days.",
+        "Dear customer, your order has been shipped. Please see below for tracking number. \n\n\nYour parcel should arrive between 10 - 20 days.",
         style: TextStyle(
           fontSize: 17.0,
           color: CustomColors.primaryDarkColor,
@@ -211,7 +211,7 @@ class MessageDetailsPage extends StatelessWidget {
               onPressed: () {},
               shape: CircleBorder(),
               child: Icon(
-                Icons.arrow_upward,
+                LineIcons.paper_plane,
                 color: Colors.white,
               ),
             ),
