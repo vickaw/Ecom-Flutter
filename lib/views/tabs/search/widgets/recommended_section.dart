@@ -17,6 +17,7 @@ class RecommendedSection extends StatelessWidget {
     ];
     return Container(
       child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SubHeader(
             title: "Recommended",
@@ -25,6 +26,8 @@ class RecommendedSection extends StatelessWidget {
           ),
           Wrap(
             spacing: 5.0,
+            alignment: WrapAlignment.start,
+            crossAxisAlignment: WrapCrossAlignment.start,
             children: recommendedItems.map((item) {
               return recommendedCard(context: context, item: item);
             }).toList(),
