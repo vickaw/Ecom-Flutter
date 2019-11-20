@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hello_shop/utils/colors.dart';
 import '../../../utils/utils.dart';
 import '../../../models/product.dart';
@@ -39,6 +40,14 @@ class _ProductWidgetState extends State<ProductWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    ScreenUtil.instance = ScreenUtil(
+      width: screenWidth,
+      height: screenHeight,
+      allowFontScaling: true,
+    )..init(context);
+
     final colorList = Container(
       margin: EdgeInsets.only(top: 10.0),
       height: 50.0,
@@ -68,7 +77,7 @@ class _ProductWidgetState extends State<ProductWidget> {
 
     final sizesList = Container(
       margin: EdgeInsets.only(top: 10.0),
-      height: 50.0,
+      height: ScreenUtil().setHeight(40),
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: widget.sizes.map((size) {
@@ -117,7 +126,7 @@ class _ProductWidgetState extends State<ProductWidget> {
         : Container();
     return MaterialButton(
       elevation: isSelected ? 4.0 : 0.0,
-      minWidth: 60.0,
+      minWidth: 40.0,
       color: AppFunctions.formatColor(color),
       splashColor: AppFunctions.formatColor(color),
       shape: CircleBorder(),
@@ -141,7 +150,7 @@ class _ProductWidgetState extends State<ProductWidget> {
           child: Text(
             size,
             style: TextStyle(
-              fontSize: 17.0,
+              fontSize: 15.0,
               color: isSelected ? Colors.white : Colors.black,
             ),
           ),

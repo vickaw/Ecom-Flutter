@@ -61,8 +61,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
       width: 388,
       height: 1600,
       allowFontScaling: true,
-    )..init(context);    
-     final multiplier = screenHeight / screenWidth;
+    )..init(context);
+    final multiplier = screenHeight / screenWidth;
 
     final price = Text(
       "\$${widget.product.price}",
@@ -169,7 +169,9 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
       right: 0,
       child: Container(
         margin: EdgeInsets.only(bottom: 20.0),
-        padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setHeight(18) * multiplier),
+        padding: EdgeInsets.symmetric(
+          horizontal: ScreenUtil().setHeight(18) * multiplier,
+        ),
         // height: ScreenUtil().setHeight(80.0),
         width: MediaQuery.of(context).size.width,
         child: Row(
@@ -180,7 +182,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
                 child: CustomButton(
                   text: "Share This     ",
                   onPressed: () {},
-                  iconData: Icons.arrow_upward,
+                  iconData: Icons.share,
                   isInverse: true,
                 ),
               ),
