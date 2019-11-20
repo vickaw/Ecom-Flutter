@@ -89,7 +89,7 @@ class CarouselState extends State<Carousel> {
   }
 
   dotIndicator({bool isActive, int index}) {
-    double size = isActive ? 24.0 : 12.0;
+    double size = isActive ? 20.0 : 10.0;
     return AnimatedContainer(
       duration: Duration(milliseconds: 150),
       margin: EdgeInsets.symmetric(horizontal: 8.0),
