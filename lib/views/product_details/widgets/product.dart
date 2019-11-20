@@ -50,7 +50,7 @@ class _ProductWidgetState extends State<ProductWidget> {
 
     final colorList = Container(
       margin: EdgeInsets.only(top: 10.0),
-      height: 50.0,
+      height: 40.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: widget.colors.map((color) {
