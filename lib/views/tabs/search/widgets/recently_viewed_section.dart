@@ -62,8 +62,7 @@ class RecentlyViewedSection extends StatelessWidget {
         elevation: 0.0,
         color: Colors.white,
         child: Container(
-          width: MediaQuery.of(context).size.width * 0.3,
-          padding: EdgeInsets.symmetric(vertical: 5.0),
+          width: MediaQuery.of(context).size.width * 0.33,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
