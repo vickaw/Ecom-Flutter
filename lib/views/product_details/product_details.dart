@@ -241,7 +241,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
     );
 
     final tabBarView = Container(
-      height: screenHeight * 0.3,
+      height: ScreenUtil().setHeight(280) * multiplier,
       padding: EdgeInsets.symmetric(horizontal: 20.0),
       margin: EdgeInsets.only(top: 10.0),
       child: TabBarView(
