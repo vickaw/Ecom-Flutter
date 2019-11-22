@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_shop/utils/colors.dart';
 
 class Carousel extends StatefulWidget {
   final List<ExactAssetImage> images;
@@ -75,9 +76,9 @@ class CarouselState extends State<Carousel> {
       left: 0,
       right: 0,
       child: Container(
-        height: 50.0,
+        height: 10.0,
         decoration: BoxDecoration(
-          color: Colors.grey[800].withOpacity(0.5),
+          color: CustomColors.scaffoldColor,
         ),
         child: indicators,
       ),
@@ -89,16 +90,20 @@ class CarouselState extends State<Carousel> {
   }
 
   dotIndicator({bool isActive, int index}) {
-    double size = isActive ? 20.0 : 10.0;
+    double size = 10.0;
     return AnimatedContainer(
       duration: Duration(milliseconds: 150),
       margin: EdgeInsets.symmetric(horizontal: 8.0),
       height: size,
       width: size,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isActive ? Colors.grey : Colors.grey.withOpacity(0.1),
         borderRadius: BorderRadius.all(
           Radius.circular(12.0),
+        ),
+        border: Border.all(
+          width: 1,
+          color:  Colors.grey
         ),
       ),
       child: InkWell(onTap: () => switchToPage(index)),
