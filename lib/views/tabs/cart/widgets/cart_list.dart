@@ -158,10 +158,11 @@ class _CartListState extends State<CartList> {
         shape: BoxShape.circle,
       ),
       child: Center(
-        heightFactor: 35.0,
+        heightFactor: 29.0,
         child: Image.asset(
           product.photo,
           fit: BoxFit.cover,
+          height: 50.0,
         ),
       ),
     );
