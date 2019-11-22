@@ -27,7 +27,7 @@ class MessagesPage extends StatelessWidget {
           border: InputBorder.none,
         ),
         keyboardType: TextInputType.text,
-        style: TextStyle(color: Colors.grey),
+        style: TextStyle(color: Colors.black),
         cursorColor: Colors.grey,
       ),
     );
