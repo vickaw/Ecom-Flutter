@@ -53,7 +53,7 @@ class ProfileTab extends StatelessWidget {
       ),
       color: Theme.of(context).primaryColor,
       focusColor: Theme.of(context).primaryColor,
-      highlightedBorderColor: Theme.of(context).primaryColor,
+      highlightedBorderColor: Colors.grey.withOpacity(0.3),
       textColor: CustomColors.primaryDarkColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(
