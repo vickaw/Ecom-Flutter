@@ -6,15 +6,21 @@ import '../../../global_widgets/custom_form_field.dart';
 import '../../../global_widgets/form_container.dart';
 import '../../../router.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   final Function(int) changeTab;
 
-  const LoginPage({Key key, this.changeTab}) : super(key: key);
+  LoginPage({Key key, this.changeTab}) : super(key: key);
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController email = new TextEditingController();
+  TextEditingController password = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController email = new TextEditingController();
-    TextEditingController password = new TextEditingController();
     AlertService alert = new AlertService();
 
     final emailField = CustomFormField(
@@ -31,7 +37,9 @@ class LoginPage extends StatelessWidget {
     );
 
     final formSpace = SizedBox(height: 20.0);
-    final hr = Divider(thickness: 0.45,);
+    final hr = Divider(
+      thickness: 0.45,
+    );
 
     final form = FormContainer(
       child: Column(
@@ -89,7 +97,7 @@ class LoginPage extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              changeTab(1);
+              widget.changeTab(1);
             },
             child: Text(
               "Create",
