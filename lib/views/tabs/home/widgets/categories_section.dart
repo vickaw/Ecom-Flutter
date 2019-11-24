@@ -33,7 +33,7 @@ class CategoriesSection extends StatelessWidget {
 
     final categoryList = Container(
       margin: EdgeInsets.only(top: 10.0),
-      height: 90.0,
+      height: 110.0,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,

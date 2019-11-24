@@ -1,31 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:hello_shop/utils/colors.dart';
 import '../utils/utils.dart';
 import '../models/category.dart';
 
 class CategoryIcon extends StatelessWidget {
   final Category category;
+  final bool isSelected;
 
-  const CategoryIcon({Key key, @required this.category}) : super(key: key);
+  const CategoryIcon({Key key, @required this.category, this.isSelected = false})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final size = 60.0;
+    final size = 70.0;
 
     final circle = Container(
       margin: EdgeInsets.only(bottom: 5.0),
+      padding: EdgeInsets.all(5.0),
       height: size,
       width: size,
       decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        gradient: LinearGradient(
-          colors: [
-            AppFunctions.formatColor(category.color),
-            AppFunctions.formatColor(category.color).withOpacity(0.8),
-          ],
+        border: Border.all(
+          color: isSelected ? Theme.of(context).primaryColor : CustomColors.scaffoldColor
         ),
+        shape: BoxShape.circle,
       ),
-      child: Center(
-        heightFactor: 40.0,
-        child: Image.asset(category.photo, height: 40.0),
+      child: Container(
+        height: size,
+        width: size,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(
+            colors: [
+              AppFunctions.formatColor(category.color),
+              AppFunctions.formatColor(category.color).withOpacity(0.8),
+            ],
+          ),
+        ),
+        child: Center(
+          heightFactor: 40.0,
+          child: Image.asset(category.photo, height: 40.0),
+        ),
       ),
     );
 

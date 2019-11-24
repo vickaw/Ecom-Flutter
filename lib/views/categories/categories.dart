@@ -33,6 +33,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
         child: Container(
           child: Column(
             children: categories.map((category) {
+              bool isSelected = selectedCategoryIndex == categories.indexOf(category) ? true : false;
               return Column(
                 children: <Widget>[
                   GestureDetector(
@@ -41,7 +42,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                        selectedCategoryIndex = categories.indexOf(category); 
                       });
                     },
-                    child: CategoryIcon(category: category),
+                    child: CategoryIcon(category: category, isSelected: isSelected,),
                   ),
                   SizedBox(
                     height: 30.0,
