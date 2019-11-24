@@ -7,21 +7,25 @@ class CategoryIcon extends StatelessWidget {
   final Category category;
   final bool isSelected;
 
-  const CategoryIcon({Key key, @required this.category, this.isSelected = false})
+  const CategoryIcon(
+      {Key key, @required this.category, this.isSelected = false})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
     final size = 70.0;
 
-    final circle = Container(
+    final circle = AnimatedContainer(
+      duration: Duration(milliseconds: 450),
+      curve: Curves.easeIn,
       margin: EdgeInsets.only(bottom: 5.0),
       padding: EdgeInsets.all(5.0),
       height: size,
       width: size,
       decoration: BoxDecoration(
         border: Border.all(
-          color: isSelected ? Theme.of(context).primaryColor : CustomColors.scaffoldColor
-        ),
+            color: isSelected
+                ? Theme.of(context).primaryColor
+                : CustomColors.scaffoldColor),
         shape: BoxShape.circle,
       ),
       child: Container(
