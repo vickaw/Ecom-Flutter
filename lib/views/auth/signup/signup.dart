@@ -49,16 +49,17 @@ class _SignUpPageState extends State<SignUpPage> {
     );
 
     final formSpace = SizedBox(height: 20.0);
+    final hr = Divider(thickness: 0.45);
 
     final form = FormContainer(
       child: Column(
         children: <Widget>[
           emailField,
-          formSpace,
+          hr,
           usernameField,
-          formSpace,
+          hr,
           passwordField,
-          formSpace,
+          hr,
           confirmPasswordField
         ],
       ),
@@ -100,7 +101,8 @@ class _SignUpPageState extends State<SignUpPage> {
         } else if (!isChecked) {
           alert.showAlert(
             context: context,
-            message: "You have to agree to the Terms of Service and the Privacy Policy",
+            message:
+                "You have to agree to the Terms of Service and the Privacy Policy",
             type: AlertType.error,
           );
         } else {

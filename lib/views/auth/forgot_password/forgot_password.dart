@@ -15,6 +15,7 @@ class ForgotPasswordPage extends StatelessWidget {
     final formSpace = SizedBox(height: 20.0);
 
     final form = FormContainer(
+      padding: EdgeInsets.symmetric(vertical: 1.0),
       child: Column(
         children: <Widget>[
           emailField,

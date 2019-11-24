@@ -31,12 +31,13 @@ class LoginPage extends StatelessWidget {
     );
 
     final formSpace = SizedBox(height: 20.0);
+    final hr = Divider(thickness: 0.45,);
 
     final form = FormContainer(
       child: Column(
         children: <Widget>[
           emailField,
-          formSpace,
+          hr,
           passwordField,
         ],
       ),

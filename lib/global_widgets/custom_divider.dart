@@ -11,7 +11,7 @@ class CutsomDivider extends StatelessWidget {
     this.margin = const EdgeInsets.symmetric(vertical: 15.0),
     this.width = double.infinity,
     this.height = 1.0,
-    this.color = Colors.grey,
+    this.color = Colors.grey, //const Color(0x1FFFFFFF)
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
