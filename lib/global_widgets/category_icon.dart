@@ -23,9 +23,10 @@ class CategoryIcon extends StatelessWidget {
       width: size,
       decoration: BoxDecoration(
         border: Border.all(
-            color: isSelected
-                ? Theme.of(context).primaryColor
-                : CustomColors.scaffoldColor),
+          color: isSelected
+              ? Theme.of(context).primaryColor
+              : CustomColors.scaffoldColor,
+        ),
         shape: BoxShape.circle,
       ),
       child: Container(
