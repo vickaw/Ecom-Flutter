@@ -16,7 +16,7 @@ class FilterDrawer extends StatelessWidget {
     );
 
     final button = Container(
-      margin: EdgeInsets.only(top: 30.0),
+      margin: EdgeInsets.only(top: 10.0),
        padding: EdgeInsets.symmetric(horizontal: 15.0),
       child: 
       CustomButton(text: "Apply Filters", onPressed: (){},),
