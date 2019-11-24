@@ -71,21 +71,16 @@ class CarouselState extends State<Carousel> {
       children: _buildPageIndicator(),
     );
 
-    final bottom = Positioned(
-      bottom: 0,
-      left: 0,
-      right: 0,
-      child: Container(
-        height: 10.0,
-        decoration: BoxDecoration(
-          color: CustomColors.scaffoldColor,
-        ),
-        child: indicators,
+    final bottom = Container(
+      height: 10.0,
+      decoration: BoxDecoration(
+        color: CustomColors.scaffoldColor,
       ),
+      child: indicators,
     );
 
-    return Stack(
-      children: <Widget>[pageView, bottom],
+    return Column(
+      children: <Widget>[Expanded(child: pageView), bottom],
     );
   }
 
@@ -101,10 +96,7 @@ class CarouselState extends State<Carousel> {
         borderRadius: BorderRadius.all(
           Radius.circular(12.0),
         ),
-        border: Border.all(
-          width: 1,
-          color:  Colors.grey
-        ),
+        border: Border.all(width: 1, color: Colors.grey),
       ),
       child: InkWell(onTap: () => switchToPage(index)),
     );

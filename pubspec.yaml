@@ -62,15 +62,14 @@ flutter:
     - assets/images/products/runningshoes-black.png
     - assets/images/products/runningshoes-blue.png
     - assets/images/products/nikeshoe-red.png
-    - assets/images/products/boots-winered.jpg
-    - assets/images/products/boots-black.jpg
-    - assets/images/products/boots-beige.jpg
-    - assets/images/products/backpack-brown.jpg
-    - assets/images/products/backpack-armygreen.jpg
-    - assets/images/products/backpack-khaki.jpg
-    - assets/images/products/scarf-a.jpg
-    - assets/images/products/scarf-b.jpg
-    - assets/images/products/scarf-c.jpg
+    - assets/images/products/boots-black.png
+    - assets/images/products/boots-mushroom.png
+    - assets/images/products/boots-hthrgrey.png
+    - assets/images/products/backpack-grey.png
+    - assets/images/products/backpack-blue.png
+    - assets/images/products/backpack-red.png
+    - assets/images/products/scarf-grey.png
+    - assets/images/products/scarf-blue.png
     - assets/images/empty.png
     - assets/images/jane.jpg
     - assets/images/shop/banner.jpg

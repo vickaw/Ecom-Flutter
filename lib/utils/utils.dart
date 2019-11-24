@@ -51,23 +51,23 @@ class AppImages {
   static const man = 'assets/images/latest_items/man.jpg';
   static const woman = 'assets/images/latest_items/woman.jpg';
 
-  static const runningShoesBlack = 'assets/images/products/runningshoes-black.png';
-  static const runningShoesBlue = 'assets/images/products/runningshoes-blue.png';
+  static const runningShoesBlack =
+      'assets/images/products/runningshoes-black.png';
+  static const runningShoesBlue =
+      'assets/images/products/runningshoes-blue.png';
 
   static const nikeShoeRed = 'assets/images/products/nikeshoe-red.png';
 
-  static const bootsBlack = 'assets/images/products/boots-black.jpg';
-  static const bootsBeige = 'assets/images/products/boots-beige.jpg';
-  static const bootsWineRed = 'assets/images/products/boots-winered.jpg';
+  static const bootsBlack = 'assets/images/products/boots-black.png';
+  static const bootsMushroom = 'assets/images/products/boots-mushroom.png';
+  static const bootsHthrGrey = 'assets/images/products/boots-hthrgrey.png';
 
-  static const backpackBrown = 'assets/images/products/backpack-brown.jpg';
-  static const backpackArmyGreen =
-      'assets/images/products/backpack-armygreen.jpg';
-  static const backpackKhaki = 'assets/images/products/backpack-khaki.jpg';
+  static const backpackGrey = 'assets/images/products/backpack-grey.png';
+  static const backpackBlue = 'assets/images/products/backpack-blue.png';
+  static const backpackRed = 'assets/images/products/backpack-red.png';
 
-  static const scarfA = 'assets/images/products/scarf-a.jpg';
-  static const scarfB = 'assets/images/products/scarf-b.jpg';
-  static const scarfC = 'assets/images/products/scarf-c.jpg';
+  static const scarfGrey = 'assets/images/products/scarf-grey.png';
+  static const scarfBlue = 'assets/images/products/scarf-blue.png';
 
   static const empty = 'assets/images/empty.png';
   static const jane = 'assets/images/jane.jpg';
