@@ -160,9 +160,8 @@ class MessageDetailsPage extends StatelessWidget {
       ),
     );
 
-    final chatContainer = Container(
-      margin: EdgeInsets.only(top: 20.0),
-      padding: EdgeInsets.only(left: 20.0),
+    final chatContainer = SingleChildScrollView(
+      padding: EdgeInsets.only(left: 20.0, top: 20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -174,7 +173,8 @@ class MessageDetailsPage extends StatelessWidget {
               ),
             ),
           ),
-          chatBubble
+          chatBubble,
+          SizedBox(height: 100.0)
         ],
       ),
     );
@@ -219,6 +219,7 @@ class MessageDetailsPage extends StatelessWidget {
         ),
       ),
     );
+
     return Scaffold(
       appBar: appBar,
       body: Container(
@@ -230,7 +231,7 @@ class MessageDetailsPage extends StatelessWidget {
               children: <Widget>[
                 product,
                 Expanded(
-                  child: SingleChildScrollView(child: chatContainer),
+                  child: Container(child: chatContainer),
                 )
               ],
             ),
