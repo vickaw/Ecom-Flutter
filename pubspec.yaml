@@ -72,6 +72,8 @@ flutter:
     - assets/images/products/scarf-blue.png
     - assets/images/empty.png
     - assets/images/jane.jpg
+    - assets/images/logo.png
+    - assets/images/logo-white.png
     - assets/images/shop/banner.jpg
     - assets/images/shop/slider1.jpg
     - assets/images/shop/slider2.jpg

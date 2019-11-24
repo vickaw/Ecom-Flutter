@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_shop/views/splash/splash.dart';
 import 'views/shop_profile/shop_profile.dart';
 import 'views/checkout/checkout.dart';
 import 'views/messages/message_details.dart';
@@ -13,6 +14,7 @@ import 'views/categories/categories.dart';
 import 'views/onboarding/onboarding.dart';
 
 const String homeViewRoute = '/';
+const String splashViewRoute = '/';
 const String onboardingViewRoute = 'onboarding';
 const String authViewRoute = 'auth';
 const String categoriesViewRoute = 'categories';
@@ -27,6 +29,8 @@ const String shopProfileViewRoute = 'shop_profile';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
+    case splashViewRoute:
+      return MaterialPageRoute(builder: (_) => SplashPage());
     case homeViewRoute:
       return MaterialPageRoute(builder: (_) => TabsPage());
     case onboardingViewRoute:

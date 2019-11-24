@@ -70,6 +70,8 @@ class AppImages {
   static const scarfBlue = 'assets/images/products/scarf-blue.png';
 
   static const empty = 'assets/images/empty.png';
+  static const logo = 'assets/images/logo.png';
+  static const logoWhite = 'assets/images/logo-white.png';
   static const jane = 'assets/images/jane.jpg';
 
   static const shopBanner = 'assets/images/shop/banner.jpg';
