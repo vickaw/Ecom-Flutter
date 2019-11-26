@@ -14,7 +14,7 @@ import 'views/categories/categories.dart';
 import 'views/onboarding/onboarding.dart';
 
 const String homeViewRoute = '/';
-const String splashViewRoute = '/';
+const String splashViewRoute = 'splash_screen';
 const String onboardingViewRoute = 'onboarding';
 const String authViewRoute = 'auth';
 const String categoriesViewRoute = 'categories';
