@@ -19,7 +19,7 @@ class ReviewsWidget extends StatelessWidget {
 
 
     return Container(
-       margin: EdgeInsets.only(bottom: ScreenUtil().setHeight(2) * multiplier),
+       margin: EdgeInsets.only(bottom: ScreenUtil().setHeight(12) * multiplier),
       child: ListView(
         children: reviews.map((review) {
           return reviewCard(review: review);
