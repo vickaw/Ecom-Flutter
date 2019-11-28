@@ -141,6 +141,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
     );
 
     final appBar = AppBar(
+      brightness: Brightness.light,
       leading: IconButton(
         icon: Icon(
           LineIcons.angle_left,

@@ -64,6 +64,7 @@ class _SearchResultsPageState extends State<SearchResultsPage> {
       child: Scaffold(
         primary: true,
         appBar: AppBar(
+          brightness: Brightness.light,
           elevation: 4.0,
           backgroundColor: Colors.white,
           leading: IconButton(

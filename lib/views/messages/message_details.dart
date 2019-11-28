@@ -46,6 +46,7 @@ class MessageDetailsPage extends StatelessWidget {
     );
 
     final appBar = AppBar(
+      brightness: Brightness.light,
       backgroundColor: Colors.white,
       leading: IconButton(
         icon: Icon(

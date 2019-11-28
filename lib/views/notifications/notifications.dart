@@ -8,6 +8,7 @@ class NotificationsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
+      brightness: Brightness.light,
       leading: Container(),
       actions: <Widget>[
         IconButton(

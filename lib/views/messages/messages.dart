@@ -33,6 +33,7 @@ class MessagesPage extends StatelessWidget {
     );
 
     final appBar = AppBar(
+      brightness: Brightness.light,
       leading: Container(),
       actions: <Widget>[
         IconButton(

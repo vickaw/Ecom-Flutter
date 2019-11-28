@@ -16,6 +16,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
+      brightness: Brightness.light,
       leading: Container(),
       actions: <Widget>[
         IconButton(

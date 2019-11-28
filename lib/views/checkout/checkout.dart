@@ -35,6 +35,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final appBar = AppBar(
+      brightness: Brightness.light,
       leading: Container(),
       actions: <Widget>[
         IconButton(
