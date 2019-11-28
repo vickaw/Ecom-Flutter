@@ -53,6 +53,13 @@ class HomeWidget extends StatelessWidget {
             childCount: filteredList.length,
           ),
         ),
+        SliverList(
+          delegate: SliverChildListDelegate(
+            [
+              SizedBox(height: 50.0),
+            ],
+          ),
+        ),
       ],
     );
   }
