@@ -206,10 +206,6 @@ class _CartListState extends State<CartList> {
       height: 10.0,
     );
 
-    // final divider = CutsomDivider(
-    //   width: MediaQuery.of(context).size.width * 0.5,
-    // );
-
     final itemDetails = Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
