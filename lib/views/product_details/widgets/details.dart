@@ -60,6 +60,7 @@ class DetailsWidget extends StatelessWidget {
       ),
     );
     return Container(
+      margin: EdgeInsets.only(bottom: 30.0),
       child: Column(
         children: <Widget>[firstRow, secondRow, thirdRow],
       ),

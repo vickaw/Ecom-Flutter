@@ -84,6 +84,7 @@ class ReviewsWidget extends StatelessWidget {
     );
 
     return Container(
+      margin: EdgeInsets.only(bottom: 50.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
