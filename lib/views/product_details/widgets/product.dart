@@ -106,9 +106,8 @@ class _ProductWidgetState extends State<ProductWidget> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Expanded(
-            child: colorSelectionSection,
-          ),
+          colorSelectionSection,
+          SizedBox(height: 25.0,),
           Expanded(
             child: sizesSelectionSection,
           )
