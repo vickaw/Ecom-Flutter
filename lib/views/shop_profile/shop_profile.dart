@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../../utils/colors.dart';
 import '../../utils/utils.dart';
 import '../../views/shop_profile/widgets/reviews_widget.dart';
@@ -131,8 +132,11 @@ class _ShopProfilePageState extends State<ShopProfilePage>
     );
 
     return Scaffold(
-      body: Stack(
-        children: <Widget>[pageElements, appBar, title],
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.light,
+        child: Stack(
+          children: <Widget>[pageElements, appBar, title],
+        ),
       ),
     );
   }
