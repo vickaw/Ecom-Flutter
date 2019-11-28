@@ -288,7 +288,7 @@ class _CartListState extends State<CartList> {
               ),
             ),
           ),
-          Divider(indent: MediaQuery.of(context).size.width * 0.35,)
+          Divider(indent: MediaQuery.of(context).size.width * 0.35)
         ],
       ),
     );
