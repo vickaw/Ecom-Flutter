@@ -206,9 +206,9 @@ class _CartListState extends State<CartList> {
       height: 10.0,
     );
 
-    final divider = CutsomDivider(
-      width: MediaQuery.of(context).size.width * 0.5,
-    );
+    // final divider = CutsomDivider(
+    //   width: MediaQuery.of(context).size.width * 0.5,
+    // );
 
     final itemDetails = Container(
       child: Column(
@@ -232,7 +232,6 @@ class _CartListState extends State<CartList> {
           ),
           itemSpacer,
           itemCounter,
-          index == length - 1 ? Container() : divider
         ],
       ),
     );
@@ -261,28 +260,36 @@ class _CartListState extends State<CartList> {
       ),
     );
 
-    return Dismissible(
-      secondaryBackground: bgSec,
-      background: bg,
-      key: Key(product.id.toString()),
-      onDismissed: (direction) async {
-        await CartService().removeItemFromCart(product.id);
-        setState(() {
-          sumTotalPrice();
-          cartItems.removeAt(index);
-        });
-      },
-      child: Container(
-        margin: EdgeInsets.only(bottom: 20.0),
-        child: Row(
-          children: <Widget>[
-            circularImage,
-            SizedBox(
-              width: 20.0,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      child: Column(
+        children: <Widget>[
+          Dismissible(
+            secondaryBackground: bgSec,
+            background: bg,
+            key: Key(product.id.toString()),
+            onDismissed: (direction) async {
+              await CartService().removeItemFromCart(product.id);
+              setState(() {
+                sumTotalPrice();
+                cartItems.removeAt(index);
+              });
+            },
+            child: Container(
+              margin: EdgeInsets.only(bottom: 20.0),
+              child: Row(
+                children: <Widget>[
+                  circularImage,
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  itemDetails
+                ],
+              ),
             ),
-            itemDetails
-          ],
-        ),
+          ),
+          Divider(indent: MediaQuery.of(context).size.width * 0.35,)
+        ],
       ),
     );
   }
