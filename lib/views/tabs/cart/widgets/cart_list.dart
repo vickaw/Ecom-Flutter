@@ -48,7 +48,7 @@ class _CartListState extends State<CartList> {
     final list = SingleChildScrollView(
       child: Container(
         margin: EdgeInsets.only(top: 30.0),
-        height: screenHeight * 0.6,
+        height: screenHeight * 0.58,
         child: FutureBuilder(
           future: cartService.getCartItems(),
           builder: (
@@ -98,6 +98,7 @@ class _CartListState extends State<CartList> {
         ? Container()
         : Container(
             height: screenHeight * 0.1,
+            padding: EdgeInsets.only(top: 5.0),
             child: Row(
               children: <Widget>[
                 Expanded(
