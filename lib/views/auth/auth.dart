@@ -30,10 +30,6 @@ class AuthPageState extends State<AuthPage>
     );
   }
 
-  void sayHello() {
-    print("Hello WORLD");
-  }
-
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
