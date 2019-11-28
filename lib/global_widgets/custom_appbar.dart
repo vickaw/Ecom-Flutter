@@ -10,6 +10,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      brightness: Brightness.light,
       leading: Container(),
       actions: <Widget>[
         iconBtn(
