@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_shop/services/alert.service.dart';
 import 'package:hello_shop/views/auth/widgets/terms_policy_dialog.dart';
@@ -147,38 +148,36 @@ class _SignUpPageState extends State<SignUpPage> {
                   });
                 },
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Text(
-                        "I agree to the",
+              Expanded(
+                child: RichText(
+                  text: TextSpan(
+                    text: 'I agree to the ',
+                    style: defultTextStyle,
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'Terms of Service',
+                        style: linkTextStyle,
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            _showTermsPolicyDialog(context, false);
+                          },
+                      ),
+                      TextSpan(
+                        text: ' and ',
                         style: defultTextStyle,
                       ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      GestureDetector(
-                        onTap: () => _showTermsPolicyDialog(context, false),
-                        child: Text("Terms of Service", style: linkTextStyle),
-                      ),
-                      Text(" and ", style: defultTextStyle),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      GestureDetector(
-                        onTap: () => _showTermsPolicyDialog(context, true),
-                        child: Text("Privacy Policy.", style: linkTextStyle),
+                      TextSpan(
+                        text: 'Privacy Policy.',
+                        style: linkTextStyle,
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            _showTermsPolicyDialog(context, true);
+                          },
                       )
                     ],
-                  )
-                ],
+                  ),
+                ),
               ),
-            
             ],
           ),
           Container(
