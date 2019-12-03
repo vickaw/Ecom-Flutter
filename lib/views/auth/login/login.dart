@@ -19,6 +19,15 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController email = new TextEditingController();
   TextEditingController password = new TextEditingController();
 
+
+
+  @override
+  void dispose() {
+    email.dispose();
+    password.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     AlertService alert = new AlertService();

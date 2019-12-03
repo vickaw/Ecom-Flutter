@@ -17,6 +17,12 @@ class SearchResultsPage extends StatefulWidget {
 class _SearchResultsPageState extends State<SearchResultsPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   TextEditingController controller = new TextEditingController();
+  
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   List<String> tabs = [
     "BEST MATCH",

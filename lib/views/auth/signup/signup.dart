@@ -21,6 +21,15 @@ class _SignUpPageState extends State<SignUpPage> {
   AlertService alert = new AlertService();
 
   @override
+  void dispose() {
+    email.dispose();
+    name.dispose();
+    password.dispose();
+    confirmPassword.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final emailField = CustomFormField(
       labelText: 'EMAIL ADDRESS',
@@ -113,11 +122,13 @@ class _SignUpPageState extends State<SignUpPage> {
 
     final defultTextStyle = TextStyle(
       fontWeight: FontWeight.w600,
+      fontSize: 13.0,
       color: Colors.grey.withOpacity(0.8),
     );
 
     final linkTextStyle = TextStyle(
       fontWeight: FontWeight.w600,
+      fontSize: 13.0,
       color: Theme.of(context).primaryColor,
     );
 
@@ -166,7 +177,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     ],
                   )
                 ],
-              )
+              ),
+            
             ],
           ),
           Container(
