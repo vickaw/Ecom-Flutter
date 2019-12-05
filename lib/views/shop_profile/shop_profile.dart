@@ -117,7 +117,7 @@ class _ShopProfilePageState extends State<ShopProfilePage>
     );
 
     final tabBarView = Container(
-      height: screenHeight * 0.65,
+      height: screenHeight * 0.635,
       padding: EdgeInsets.symmetric(horizontal: 20.0),
       child: TabBarView(
         controller: tabController,
