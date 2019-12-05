@@ -48,7 +48,7 @@ class _CartListState extends State<CartList> {
     final list = SingleChildScrollView(
       child: Container(
         margin: EdgeInsets.only(top: 30.0),
-        height: screenHeight * 0.58,
+        height: screenHeight * 0.6,
         child: FutureBuilder(
           future: cartService.getCartItems(),
           builder: (
