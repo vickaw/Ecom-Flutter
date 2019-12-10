@@ -116,7 +116,7 @@ class _CartListState extends State<CartList> {
                         "\$${totalPrice.toStringAsFixed(2)}",
                         style: TextStyle(
                           fontFamily: AppFonts.secondaryFont,
-                          fontSize: 30.0,
+                          fontSize: 20.0,
                         ),
                       ),
                       Text(
