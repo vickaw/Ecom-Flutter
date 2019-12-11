@@ -1,15 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hello_shop/models/message2.dart';
 import 'package:hello_shop/models/product.dart';
 import '../../router.dart';
 import '../../utils/colors.dart';
 import '../../utils/utils.dart';
 import 'package:line_icons/line_icons.dart';
 
-class MessageDetailsPage extends StatelessWidget {
+class MessageDetailsPage extends StatefulWidget {
   final String name;
 
   const MessageDetailsPage({Key key, this.name}) : super(key: key);
+
+  @override
+  _MessageDetailsPageState createState() => _MessageDetailsPageState();
+}
+
+class _MessageDetailsPageState extends State<MessageDetailsPage> {
+  TextEditingController content = new TextEditingController();
+  List<Message2> messages = [];
+
+  @override
+  void initState() {
+    messages.add(
+      Message2(
+        content:
+            "Dear customer, your order has been shipped. Please see below for tracking number. \n\n\nYour parcel should arrive between 10 - 20 days.",
+        isFromMe: false,
+      ),
+    );
+    super.initState();
+  }
+
+  void addMessage() {
+    setState(() {
+      messages.add(Message2(content: content.text, isFromMe: true));
+      content.text = "";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
@@ -23,8 +52,10 @@ class MessageDetailsPage extends StatelessWidget {
     final initials = Padding(
       padding: EdgeInsets.only(right: 15.0),
       child: MaterialButton(
-        onPressed: () => Navigator.of(context)
-            .pushNamed(shopProfileViewRoute, arguments: name),
+        onPressed: () => Navigator.of(context).pushNamed(
+          shopProfileViewRoute,
+          arguments: widget.name,
+        ),
         shape: CircleBorder(),
         child: Container(
           height: 40.0,
@@ -35,7 +66,7 @@ class MessageDetailsPage extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              AppFunctions.getNameInitials(name),
+              AppFunctions.getNameInitials(widget.name),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
@@ -60,7 +91,7 @@ class MessageDetailsPage extends StatelessWidget {
         children: <Widget>[
           SizedBox(height: 5.0),
           Text(
-            name,
+            widget.name,
             style: TextStyle(
               color: CustomColors.primaryDarkColor,
               fontSize: 18.0,
@@ -139,32 +170,9 @@ class MessageDetailsPage extends StatelessWidget {
       ),
     );
 
-    final chatBubble = Container(
-      margin: EdgeInsets.only(top: 20.0),
-      width: MediaQuery.of(context).size.width * 0.6,
-      padding: EdgeInsets.all(20.0),
-      child: Text(
-        "Dear customer, your order has been shipped. Please see below for tracking number. \n\n\nYour parcel should arrive between 10 - 20 days.",
-        style: TextStyle(
-          fontSize: 17.0,
-          color: CustomColors.primaryDarkColor,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topRight: Radius.circular(15.0),
-          topLeft: Radius.circular(15.0),
-          bottomRight: Radius.circular(15.0),
-        ),
-      ),
-    );
-
     final chatContainer = SingleChildScrollView(
-      padding: EdgeInsets.only(left: 20.0, top: 20.0),
+      padding: EdgeInsets.only(top: 20.0),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Center(
             child: Text(
@@ -174,7 +182,7 @@ class MessageDetailsPage extends StatelessWidget {
               ),
             ),
           ),
-          chatBubble,
+          getMessages(),
           SizedBox(height: 100.0)
         ],
       ),
@@ -200,6 +208,7 @@ class MessageDetailsPage extends StatelessWidget {
             ),
             Expanded(
               child: TextField(
+                controller: content,
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: "Type your message",
@@ -209,7 +218,7 @@ class MessageDetailsPage extends StatelessWidget {
             ),
             MaterialButton(
               color: CustomColors.primaryColor,
-              onPressed: () {},
+              onPressed: () => addMessage(),
               shape: CircleBorder(),
               child: Icon(
                 LineIcons.paper_plane,
@@ -238,6 +247,45 @@ class MessageDetailsPage extends StatelessWidget {
             ),
             bottom
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget getMessages() {
+    List<Widget> list = new List<Widget>();
+    for (var i = 0; i < messages.length; i++) {
+      list.add(chatBubble(message: messages[i]));
+    }
+    return Column(children: list);
+  }
+
+  Widget chatBubble({Message2 message}) {
+    return Align(
+      alignment: message.isFromMe ? Alignment.centerRight : Alignment.centerLeft,
+      child: Container(
+        margin: EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
+        width: MediaQuery.of(context).size.width * 0.6,
+        padding: EdgeInsets.all(20.0),
+        child: Text(
+          message.content,
+          style: TextStyle(
+            fontSize: 17.0,
+            color:  CustomColors.primaryDarkColor,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        decoration: BoxDecoration(
+          color: message.isFromMe ? Theme.of(context).primaryColor.withOpacity(0.1) : Colors.white,
+          borderRadius: message.isFromMe ? BorderRadius.only(
+                  topLeft: Radius.circular(15.0),
+                  bottomLeft: Radius.circular(15.0),
+                  topRight: Radius.circular(15.0),
+                ) : BorderRadius.only(
+            topRight: Radius.circular(15.0),
+            topLeft: Radius.circular(15.0),
+            bottomRight: Radius.circular(15.0),
+          ),
         ),
       ),
     );
