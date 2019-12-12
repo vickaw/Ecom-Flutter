@@ -1,16 +1,15 @@
-# hello_shop
+# Flutter E-Commerce App Theme
 
-A new Flutter project.
+Thanks for purchasing our Flutter based E-Commerce App Theme.
 
-## Getting Started
+This product aims to save development time on frontend by providing all necessary screens, components required to build a fully functional E-Commerce App.
+Clean and strucruted code, smooth animations and beautiful UI is the best part of this product.
+Follow the documentation to install and get started with the development:
 
-This project is a starting point for a Flutter application.
+-   [Documentation](https://emrade.gitbook.io/flutter-e-commerce/)
+-   [Product Page](https://fluttermarket.com/view/flutter-e-commerce-app-theme)
+-	[License Page](https://fluttermarket.com/licenses)
 
-A few resources to get you started if this is your first Flutter project:
+Please do check `FAQs` section in docs for queries.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Happy coding!
