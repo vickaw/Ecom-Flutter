@@ -10,6 +10,4 @@ Follow the documentation to install and get started with the development:
 -   [Product Page](https://fluttermarket.com/view/flutter-e-commerce-app-theme)
 -	[License Page](https://fluttermarket.com/licenses)
 
-Please do check `FAQs` section in docs for queries.
-
 Happy coding!
