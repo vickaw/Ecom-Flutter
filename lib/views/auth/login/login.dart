@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     final submitBtn = CustomButton(
-      text: "Log In",
+      text: I18n.of(context).authLoginButton,
       onPressed: () {
         // Validation
         if (email.text.isEmpty) {

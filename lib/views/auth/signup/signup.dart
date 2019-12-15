@@ -77,7 +77,7 @@ class _SignUpPageState extends State<SignUpPage> {
     );
 
     final submitBtn = CustomButton(
-      text: "Sign Up",
+      text: I18n.of(context).authSignUpButton,
       onPressed: () {
         if (email.text.isEmpty) {
           alert.showAlert(

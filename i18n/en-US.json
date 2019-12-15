@@ -8,6 +8,9 @@
       "password": "Password",
       "confirmPassword": "Confirm Password",
       "name": "Name"
-    }
+    },
+    "loginButton": "Log In",
+    "signUpButton": "Sign Up",
+    "sendEmailButton": "Send Email"
   }
 }

@@ -8,6 +8,9 @@
       "password": "पारण शब्द",
       "confirmPassword": "पासवर्ड की पुष्टि कीजिये",
       "name": "नाम"
-    }
+    },
+    "loginButton": "लॉग इन करें",
+    "signUpButton": "साइन अप करें",
+    "sendEmailButton": "ईमेल भेजें"
   }
 }

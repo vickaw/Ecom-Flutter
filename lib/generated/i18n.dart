@@ -46,6 +46,12 @@ class I18n implements WidgetsLocalizations {
   String get authFormFieldsConfirmPassword => "Confirm Password";
   /// "Name"
   String get authFormFieldsName => "Name";
+  /// "Log In"
+  String get authLoginButton => "Log In";
+  /// "Sign Up"
+  String get authSignUpButton => "Sign Up";
+  /// "Send Email"
+  String get authSendEmailButton => "Send Email";
 }
 
 class _I18n_en_US extends I18n {
@@ -79,6 +85,15 @@ class _I18n_hi_IN extends I18n {
   /// "नाम"
   @override
   String get authFormFieldsName => "नाम";
+  /// "लॉग इन करें"
+  @override
+  String get authLoginButton => "लॉग इन करें";
+  /// "साइन अप करें"
+  @override
+  String get authSignUpButton => "साइन अप करें";
+  /// "ईमेल भेजें"
+  @override
+  String get authSendEmailButton => "ईमेल भेजें";
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
@@ -108,6 +123,15 @@ class _I18n_bi_IN extends I18n {
   /// "नाम"
   @override
   String get authFormFieldsName => "नाम";
+  /// "लॉग इन करें"
+  @override
+  String get authLoginButton => "लॉग इन करें";
+  /// "साइन अप करें"
+  @override
+  String get authSignUpButton => "साइन अप करें";
+  /// "ईमेल भेजें"
+  @override
+  String get authSendEmailButton => "ईमेल भेजें";
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
