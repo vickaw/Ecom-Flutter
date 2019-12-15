@@ -52,7 +52,6 @@ class _CustomFormFieldState extends State<CustomFormField> {
       obscureText: widget.isPasswordField ? _obscureText : false,
       controller: widget.controller,
       enabled: widget.enabled,
-      maxLines: widget.maxLines,
     );
   }
 
