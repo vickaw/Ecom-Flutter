@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'locale/app_localizations.dart';
+import 'package:hello_shop/generated/i18n.dart';
 import 'router.dart' as router;
 import 'theme.dart';
 import 'utils/utils.dart';
@@ -8,6 +8,7 @@ import 'utils/utils.dart';
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final i18n = I18n.delegate;
     return MaterialApp(
       title: AppConstants.appName,
       debugShowCheckedModeBanner: false,
@@ -15,25 +16,15 @@ class App extends StatelessWidget {
       onGenerateRoute: router.generateRoute,
       initialRoute: router.splashViewRoute,
       localizationsDelegates: [
+        i18n,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
-        AppLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: [
-        Locale('en', 'US'),
-        Locale('bn', 'IN'),
-        Locale('hi', 'IN'),
-      ],
-      localeResolutionCallback: (locale, supportedLocales) {
-        for (var supportedLocale in supportedLocales) {
-          if (supportedLocale.languageCode == locale.languageCode &&
-              supportedLocale.countryCode == locale.countryCode) {
-            return supportedLocale;
-          }
-        }
-
-        return supportedLocales.first;
-      },
+      supportedLocales: i18n.supportedLocales,
+      localeResolutionCallback: i18n.resolution(
+        fallback: new Locale("en", "US"),
+      ),
     );
   }
 }

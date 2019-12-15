@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_shop/generated/i18n.dart';
 import 'package:hello_shop/services/alert.service.dart';
 import '../../../global_widgets/custom_button.dart';
 import 'package:line_icons/line_icons.dart';
@@ -33,13 +34,13 @@ class _LoginPageState extends State<LoginPage> {
     AlertService alert = new AlertService();
 
     final emailField = CustomFormField(
-      labelText: 'USERNAME / EMAIL',
-      icon: LineIcons.user,
+      labelText: I18n.of(context).authFormFieldsEmail,
+      icon: LineIcons.envelope,
       controller: email,
     );
 
     final passwordField = CustomFormField(
-      labelText: 'PASSWORD',
+      labelText: I18n.of(context).authFormFieldsPassword,
       icon: LineIcons.lock,
       isPasswordField: true,
       controller: password,

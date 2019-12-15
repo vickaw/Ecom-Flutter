@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_shop/locale/app_localizations.dart';
+import 'package:hello_shop/generated/i18n.dart';
 import 'forgot_password/forgot_password.dart';
 import 'login/login.dart';
 import 'signup/signup.dart';
@@ -33,7 +33,11 @@ class AuthPageState extends State<AuthPage>
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
-    List<String> tabs = [AppLocalizations.of(context).translate("alo"), "Sign Up", "Forgot Password"];
+    List<String> tabs = [
+      I18n.of(context).authLoginTitle,
+      I18n.of(context).authRegisterTitle,
+      I18n.of(context).authForgotPasswordTitle,
+    ];
 
     final tabBar = TabBar(
       controller: tabController,
