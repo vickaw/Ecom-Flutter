@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_shop/locale/app_localizations.dart';
 import 'forgot_password/forgot_password.dart';
 import 'login/login.dart';
 import 'signup/signup.dart';
@@ -14,12 +15,11 @@ class AuthPage extends StatefulWidget {
 class AuthPageState extends State<AuthPage>
     with SingleTickerProviderStateMixin {
   TabController tabController;
-  List<String> tabs = ["Log In", "Sign Up", "Forgot Password"];
 
   @override
   void initState() {
     super.initState();
-    tabController = TabController(vsync: this, length: tabs.length);
+    tabController = TabController(vsync: this, length: 3);
   }
 
   void switchToPage(int page) {
@@ -33,6 +33,7 @@ class AuthPageState extends State<AuthPage>
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
+    List<String> tabs = [AppLocalizations.of(context).translate("alo"), "Sign Up", "Forgot Password"];
 
     final tabBar = TabBar(
       controller: tabController,

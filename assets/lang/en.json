@@ -1,0 +1,8 @@
+{
+  "alo": "Log In",
+  "auth": {
+    "loginTitle": "Log In",
+    "registerTitle": "Sign Up",
+    "forgotPasswordTitle": "Forgot Password"
+  }
+}
