@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hello_shop/utils/colors.dart';
+import '../utils/colors.dart';
 import '../models/product.dart';
 import '../router.dart';
 

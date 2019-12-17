@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_shop/global_widgets/circle_icon.dart';
+import '../../../global_widgets/circle_icon.dart';
 import '../../../models/category.dart';
 import '../../../router.dart';
 

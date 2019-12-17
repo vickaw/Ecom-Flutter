@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_shop/global_widgets/search_product_card.dart';
+import '../../../global_widgets/search_product_card.dart';
 import '../../../models/product.dart';
 
 class SearchResultList extends StatelessWidget {

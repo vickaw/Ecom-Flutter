@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:hello_shop/models/trending.dart';
+import '../models/trending.dart';
 import '../global_widgets/custom_button.dart';
 
 class TrendingItemsCard extends StatelessWidget {

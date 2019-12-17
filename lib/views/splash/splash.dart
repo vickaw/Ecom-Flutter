@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:hello_shop/router.dart';
-import 'package:hello_shop/utils/colors.dart';
-import 'package:hello_shop/utils/utils.dart';
+import '../../router.dart';
+import '../../utils/colors.dart';
+import '../../utils/utils.dart';
 
 class SplashPage extends StatefulWidget {
   @override

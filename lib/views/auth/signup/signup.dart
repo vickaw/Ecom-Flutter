@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:hello_shop/generated/i18n.dart';
-import 'package:hello_shop/services/alert.service.dart';
-import 'package:hello_shop/views/auth/widgets/terms_policy_dialog.dart';
+import '../../../generated/i18n.dart';
+import '../../../services/alert.service.dart';
+import '../../../views/auth/widgets/terms_policy_dialog.dart';
 import '../../../global_widgets/custom_button.dart';
 import 'package:line_icons/line_icons.dart';
 import '../../../global_widgets/custom_form_field.dart';

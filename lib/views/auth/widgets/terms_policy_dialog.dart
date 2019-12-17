@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_shop/utils/lorem_ipsum.dart';
+import '../../../utils/lorem_ipsum.dart';
 import 'package:line_icons/line_icons.dart';
 import '../../../utils/colors.dart';
 import 'package:flutter_html/flutter_html.dart';

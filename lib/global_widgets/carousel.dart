@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_shop/utils/colors.dart';
+import '../utils/colors.dart';
 
 class Carousel extends StatefulWidget {
   final List<ExactAssetImage> images;

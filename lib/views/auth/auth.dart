@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_shop/generated/i18n.dart';
+import '../../generated/i18n.dart';
 import 'forgot_password/forgot_password.dart';
 import 'login/login.dart';
 import 'signup/signup.dart';

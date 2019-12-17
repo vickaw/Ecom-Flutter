@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hello_shop/models/message2.dart';
-import 'package:hello_shop/models/product.dart';
+import '../../models/message2.dart';
+import '../../models/product.dart';
 import '../../router.dart';
 import '../../utils/colors.dart';
 import '../../utils/utils.dart';
