@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:hello_shop/generated/i18n.dart';
+import 'generated/i18n.dart';
 import 'router.dart' as router;
 import 'theme.dart';
 import 'utils/utils.dart';

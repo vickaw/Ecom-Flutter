@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_shop/global_widgets/custom_button.dart';
+import '../../global_widgets/custom_button.dart';
 import '../../router.dart';
 import '../../utils/colors.dart';
 

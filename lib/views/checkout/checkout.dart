@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hello_shop/global_widgets/custom_button.dart';
-import 'package:hello_shop/global_widgets/header_text.dart';
-import 'package:hello_shop/services/cart.service.dart';
-import 'package:hello_shop/utils/utils.dart';
-import 'package:hello_shop/views/checkout/widgets/payment_method.dart';
-import 'package:hello_shop/views/checkout/widgets/promo_code.dart';
-import 'package:hello_shop/views/checkout/widgets/shipping_address.dart';
+import '../../global_widgets/custom_button.dart';
+import '../../global_widgets/header_text.dart';
+import '../../services/cart.service.dart';
+import '../../utils/utils.dart';
+import '../../views/checkout/widgets/payment_method.dart';
+import '../../views/checkout/widgets/promo_code.dart';
+import '../../views/checkout/widgets/shipping_address.dart';
 import '../../router.dart';
 import '../../utils/colors.dart';
 

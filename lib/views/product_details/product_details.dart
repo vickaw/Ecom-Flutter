@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hello_shop/services/alert.service.dart';
-import 'package:hello_shop/services/cart.service.dart';
-import 'package:hello_shop/utils/utils.dart';
+import '../../services/alert.service.dart';
+import '../../services/cart.service.dart';
+import '../../utils/utils.dart';
 import '../../global_widgets/carousel.dart';
 import '../../global_widgets/custom_button.dart';
 import 'widgets/details.dart';

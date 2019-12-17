@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_shop/utils/styles.dart';
+import '../utils/styles.dart';
 
 class HeaderText extends StatelessWidget {
   final String text;

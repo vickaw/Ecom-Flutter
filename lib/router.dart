@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_shop/views/splash/splash.dart';
+import 'views/splash/splash.dart';
 import 'views/shop_profile/shop_profile.dart';
 import 'views/checkout/checkout.dart';
 import 'views/messages/message_details.dart';

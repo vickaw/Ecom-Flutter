@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_shop/utils/colors.dart';
+import '../utils/colors.dart';
 import '../utils/utils.dart';
 import '../models/category.dart';
 
