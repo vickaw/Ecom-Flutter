@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../generated/i18n.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import '../../../services/alert.service.dart';
 import '../../../global_widgets/custom_button.dart';
 import 'package:line_icons/line_icons.dart';
@@ -34,13 +34,13 @@ class _LoginPageState extends State<LoginPage> {
     AlertService alert = new AlertService();
 
     final emailField = CustomFormField(
-      labelText: I18n.of(context).authFormFieldsEmail,
+      labelText: FlutterI18n.translate(context, "auth.formFields.email"),
       icon: LineIcons.envelope,
       controller: email,
     );
 
     final passwordField = CustomFormField(
-      labelText: I18n.of(context).authFormFieldsPassword,
+      labelText: FlutterI18n.translate(context, "auth.formFields.password"),
       icon: LineIcons.lock,
       isPasswordField: true,
       controller: password,
@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     final submitBtn = CustomButton(
-      text: I18n.of(context).authLoginButton,
+      text: FlutterI18n.translate(context, "auth.loginButton"),
       onPressed: () {
         // Validation
         if (email.text.isEmpty) {

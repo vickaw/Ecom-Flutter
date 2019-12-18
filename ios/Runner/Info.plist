@@ -9,8 +9,8 @@
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>
-		<string>bi</string>
-		<string>hi</string>
+		<string>bn</string>
+		<string>it</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
