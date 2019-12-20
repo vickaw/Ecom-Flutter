@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../../../generated/i18n.dart';
 import '../../../services/alert.service.dart';
 import '../../../views/auth/widgets/terms_policy_dialog.dart';
 import '../../../global_widgets/custom_button.dart';
@@ -34,26 +33,26 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     final emailField = CustomFormField(
-      labelText: I18n.of(context).authFormFieldsEmail,
+      labelText: "Email Address",
       icon: LineIcons.envelope,
       controller: email,
     );
 
     final usernameField = CustomFormField(
-      labelText: I18n.of(context).authFormFieldsName,
+      labelText: "Name",
       icon: LineIcons.user,
       controller: name,
     );
 
     final passwordField = CustomFormField(
-      labelText: I18n.of(context).authFormFieldsPassword,
+      labelText: "Password",
       icon: LineIcons.lock,
       isPasswordField: true,
       controller: password,
     );
 
     final confirmPasswordField = CustomFormField(
-      labelText: I18n.of(context).authFormFieldsConfirmPassword,
+      labelText: "Confirm Password",
       icon: Icons.lock,
       isPasswordField: true,
       controller: confirmPassword,
@@ -77,7 +76,7 @@ class _SignUpPageState extends State<SignUpPage> {
     );
 
     final submitBtn = CustomButton(
-      text: I18n.of(context).authSignUpButton,
+      text: "Sign Up",
       onPressed: () {
         if (email.text.isEmpty) {
           alert.showAlert(

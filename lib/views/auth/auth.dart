@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../generated/i18n.dart';
 import 'forgot_password/forgot_password.dart';
 import 'login/login.dart';
 import 'signup/signup.dart';
@@ -34,9 +33,9 @@ class AuthPageState extends State<AuthPage>
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
     List<String> tabs = [
-      I18n.of(context).authLoginTitle,
-      I18n.of(context).authRegisterTitle,
-      I18n.of(context).authForgotPasswordTitle,
+      "Log In",
+      "Sign Up",
+      "Forgot Password",
     ];
 
     final tabBar = TabBar(
