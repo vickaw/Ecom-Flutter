@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../utils/colors.dart';
 import '../router.dart';
-import 'package:line_icons/line_icons.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -14,13 +14,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Container(),
       actions: <Widget>[
         iconBtn(
-          iconData: LineIcons.comments,
+          iconData: FlutterIcons.comment_discussion_oct,
           count: 5,
           route: messagesViewRoute,
           context: context,
         ),
         iconBtn(
-          iconData: LineIcons.bell,
+          iconData: FlutterIcons.bell_outline_mco,
           count: 10,
           route: notificationsViewRoute,
           context: context,

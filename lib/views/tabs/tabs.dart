@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../../views/tabs/home/home.dart';
 import '../../views/tabs/cart/cart.dart';
 import '../../views/tabs/more/more.dart';
@@ -42,10 +42,10 @@ class _TabsPageState extends State<TabsPage> {
       showUnselectedLabels: true,
       backgroundColor: Colors.white,
       items: [
-        bottomNavItem(iconData: LineIcons.home, title: 'Home'),
+        bottomNavItem(iconData: CupertinoIcons.home, title: 'Home'),
         bottomNavItem(iconData: CupertinoIcons.search, title: 'Search'),
-        bottomNavItem(iconData: LineIcons.shopping_cart, title: 'Cart'),
-        bottomNavItem(iconData: LineIcons.user, title: 'Profile'),
+        bottomNavItem(iconData: CupertinoIcons.shopping_cart, title: 'Cart'),
+        bottomNavItem(iconData: FlutterIcons.user_fea, title: 'Profile'),
         bottomNavItem(iconData: Icons.menu, title: 'More'),
       ],
     );

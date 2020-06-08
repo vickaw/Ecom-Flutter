@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../utils/styles.dart';
 import '../utils/colors.dart';
 
@@ -57,8 +56,9 @@ class _CustomFormFieldState extends State<CustomFormField> {
 
   Widget _buildPasswordFieldVisibilityToggle() {
     return IconButton(
-      icon:
-          Icon(_obscureText ? FontAwesomeIcons.eyeSlash : FontAwesomeIcons.eye, size: 20.0,),
+      icon: Icon(
+        _obscureText ? Icons.visibility_off : Icons.visibility,
+      ),
       onPressed: () {
         setState(() {
           _obscureText = !_obscureText;

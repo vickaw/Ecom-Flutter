@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../../../global_widgets/custom_divider.dart';
 import '../../../global_widgets/custom_icon_button.dart';
 import '../../../global_widgets/sub_header.dart';
 import '../../../utils/colors.dart';
-import 'package:themify_flutter/themify_flutter.dart';
 
 class PaymentMethod extends StatelessWidget {
   @override
@@ -20,7 +20,7 @@ class PaymentMethod extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Icon(
-                Themify.credit_card,
+                FlutterIcons.credit_card_plus_outline_mco,
                 color: CustomColors.primaryDarkColor,
               ),
               SizedBox(width: 10.0),

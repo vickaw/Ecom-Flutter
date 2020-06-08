@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../../../global_widgets/custom_card.dart';
 import '../../../global_widgets/header_text.dart';
 import '../../../global_widgets/icon_list_tile.dart';
-import 'package:themify_flutter/themify_flutter.dart';
 
 import '../../../router.dart';
 
@@ -17,22 +16,21 @@ class MoreTab extends StatelessWidget {
       child: Column(
         children: <Widget>[
           IconListTile(
-            iconData: Themify.location_pin,
+            iconData: FlutterIcons.map_pin_fea,
             title: "Shipping Address",
           ),
           IconListTile(
-            iconData: Themify.credit_card,
+            iconData: FlutterIcons.credit_card_plus_outline_mco,
             title: "Payment Method",
           ),
           IconListTile(
-            iconData: LineIcons.money,
+            iconData: FlutterIcons.attach_money_mdi,
             title: "Currency",
             isSmall: true,
           ),
           IconListTile(
-            iconData: LineIcons.language,
+            iconData: FlutterIcons.language_mdi,
             title: "Language",
-            isSmall: true,
           ),
         ],
       ),
@@ -43,22 +41,20 @@ class MoreTab extends StatelessWidget {
       child: Column(
         children: <Widget>[
           IconListTile(
-            iconData: Themify.bell,
+            iconData: FlutterIcons.bell_outline_mco,
             title: "Notification Settings",
           ),
           IconListTile(
-            iconData: LineIcons.shield,
+            iconData: FlutterIcons.shield_outline_mco,
             title: "Privacy Policy",
-            isSmall: true,
           ),
           IconListTile(
-            iconData: Themify.comments,
+            iconData: FlutterIcons.comment_discussion_oct,
             title: "Frequenly Asked Questions",
           ),
           IconListTile(
-            iconData: LineIcons.legal,
+            iconData: FlutterIcons.launch_mco,
             title: "Legal Information",
-            isSmall: true,
           ),
         ],
       ),

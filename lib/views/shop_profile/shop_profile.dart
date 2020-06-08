@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../utils/colors.dart';
@@ -5,8 +6,6 @@ import '../../utils/utils.dart';
 import '../../views/shop_profile/widgets/reviews_widget.dart';
 import '../../views/shop_profile/widgets/home_widget.dart';
 import '../../views/shop_profile/widgets/products_widget.dart';
-import 'package:line_icons/line_icons.dart';
-import 'package:themify_flutter/themify_flutter.dart';
 
 class ShopProfilePage extends StatefulWidget {
   final String shopName;
@@ -44,14 +43,14 @@ class _ShopProfilePageState extends State<ShopProfilePage>
             IconButton(
               onPressed: () => Navigator.of(context).pop(),
               icon: Icon(
-                LineIcons.angle_left,
+                CupertinoIcons.left_chevron,
                 color: Colors.white,
               ),
             ),
             IconButton(
               onPressed: () {},
               icon: Icon(
-                Themify.search,
+                CupertinoIcons.search,
                 color: Colors.white,
               ),
             )

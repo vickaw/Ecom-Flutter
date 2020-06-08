@@ -1,11 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../models/message2.dart';
 import '../../models/product.dart';
 import '../../router.dart';
 import '../../utils/colors.dart';
 import '../../utils/utils.dart';
-import 'package:line_icons/line_icons.dart';
 
 class MessageDetailsPage extends StatefulWidget {
   final String name;
@@ -81,7 +82,7 @@ class _MessageDetailsPageState extends State<MessageDetailsPage> {
       backgroundColor: Colors.white,
       leading: IconButton(
         icon: Icon(
-          LineIcons.angle_left,
+          CupertinoIcons.left_chevron,
           color: Colors.black,
         ),
         onPressed: () => Navigator.pop(context),
@@ -221,7 +222,7 @@ class _MessageDetailsPageState extends State<MessageDetailsPage> {
               onPressed: () => addMessage(),
               shape: CircleBorder(),
               child: Icon(
-                LineIcons.paper_plane,
+                FlutterIcons.ios_paper_plane_ion,
                 color: Colors.white,
               ),
             ),

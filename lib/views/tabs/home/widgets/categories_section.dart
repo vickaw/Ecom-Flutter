@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../../../../global_widgets/category_icon.dart';
 import '../../../../global_widgets/header_text.dart';
 import '../../../../models/category.dart';
@@ -20,7 +20,7 @@ class CategoriesSection extends StatelessWidget {
               fontWeight: FontWeight.w900,
             ),
           ),
-          Icon(FontAwesomeIcons.angleRight)
+          Icon(FlutterIcons.angle_right_faw5s)
         ],
       ),
     );

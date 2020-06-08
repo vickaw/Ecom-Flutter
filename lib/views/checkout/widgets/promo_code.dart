@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../../../global_widgets/custom_icon_button.dart';
 import '../../../utils/colors.dart';
 
@@ -11,9 +11,9 @@ class PromoCode extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Icon(
-            LineIcons.tag,
+            FlutterIcons.tag_sli,
             color: CustomColors.primaryDarkColor,
-            size: 26.0,
+            size: 22.0,
           ),
           SizedBox(width: 10.0),
           Expanded(

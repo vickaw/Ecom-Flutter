@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../services/alert.service.dart';
@@ -8,7 +9,6 @@ import '../../global_widgets/custom_button.dart';
 import 'widgets/details.dart';
 import 'widgets/product.dart';
 import 'widgets/reviews.dart';
-import 'package:line_icons/line_icons.dart';
 import '../../models/product.dart';
 import '../../utils/colors.dart';
 import 'widgets/tab_bar_head.dart';
@@ -130,7 +130,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
           IconButton(
             onPressed: () {},
             icon: Icon(
-              LineIcons.shopping_cart,
+              CupertinoIcons.shopping_cart,
               color: CustomColors.primaryDarkColor,
               size: 28.0,
             ),
@@ -144,7 +144,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
       brightness: Brightness.light,
       leading: IconButton(
         icon: Icon(
-          LineIcons.angle_left,
+          CupertinoIcons.left_chevron,
           color: Colors.black,
         ),
         onPressed: () => Navigator.pop(context),

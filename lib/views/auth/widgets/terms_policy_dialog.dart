@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../utils/lorem_ipsum.dart';
-import 'package:line_icons/line_icons.dart';
 import '../../../utils/colors.dart';
 import 'package:flutter_html/flutter_html.dart';
 
@@ -71,7 +70,7 @@ class TermsAndPolicyDialog extends StatelessWidget {
             SizedBox(
               width: 10.0,
             ),
-            Icon(LineIcons.check_circle, color: Colors.white),
+            Icon(Icons.check_circle_outline, color: Colors.white),
           ],
         ),
       ),

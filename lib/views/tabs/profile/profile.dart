@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../../../global_widgets/custom_card.dart';
 import '../../../global_widgets/icon_list_tile.dart';
-import 'package:themify_flutter/themify_flutter.dart';
 import '../../../utils/colors.dart';
 import '../../../utils/utils.dart';
 
@@ -84,19 +84,19 @@ class ProfileTab extends StatelessWidget {
       child: Column(
         children: <Widget>[
           IconListTile(
-            iconData: Themify.list,
+            iconData: FlutterIcons.list_sli,
             title: "All My Orders",
           ),
           IconListTile(
-            iconData: Themify.shopping_cart_full,
+            iconData: FlutterIcons.shopping_bag_fea,
             title: "Pending Shipments",
           ),
           IconListTile(
-            iconData: Themify.wallet,
+            iconData: FlutterIcons.wallet_sli,
             title: "Pending Payments",
           ),
           IconListTile(
-            iconData: Themify.check_box,
+            iconData: FlutterIcons.check_box_multiple_outline_mco,
             title: "Finished Orders",
           ),
         ],
@@ -108,19 +108,19 @@ class ProfileTab extends StatelessWidget {
       child: Column(
         children: <Widget>[
           IconListTile(
-            iconData: Themify.email,
+            iconData: FlutterIcons.email_plus_outline_mco,
             title: "Invite Friends",
           ),
           IconListTile(
-            iconData: Themify.headphone_alt,
+            iconData: FlutterIcons.customerservice_ant,
             title: "Customer Support",
           ),
           IconListTile(
-            iconData: Themify.star,
+            iconData: FlutterIcons.star_outline_mco,
             title: "Rate Our App",
           ),
           IconListTile(
-            iconData: Themify.pencil_alt,
+            iconData: FlutterIcons.page_edit_fou,
             title: "Make a Suggestion",
           ),
         ],
