@@ -5,7 +5,7 @@ import 'package:line_icons/line_icons.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
-  Size get preferredSize => Size(null, 56.0);
+  Size get preferredSize => Size.fromHeight(56.0);
 
   @override
   Widget build(BuildContext context) {
