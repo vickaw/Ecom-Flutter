@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../services/alert.service.dart';
 import '../../services/cart.service.dart';
 import '../../utils/utils.dart';
@@ -56,13 +55,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
-    final double screenWidth = MediaQuery.of(context).size.width;
-    ScreenUtil.instance = ScreenUtil(
-      width: 388,
-      height: 1600,
-      allowFontScaling: true,
-    )..init(context);
-    final multiplier = screenHeight / screenWidth;
 
     final price = Text(
       "\$${widget.product.price}",
@@ -164,6 +156,56 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
       actions: <Widget>[shoppingCartBtn],
     );
 
+    final slider = Container(
+      height: screenHeight * 0.38,
+      width: double.infinity,
+      // color: Colors.cyan,
+      child: Carousel(
+        key: carouselStateKey,
+        images: widget.product.photos.map((photo) {
+          return ExactAssetImage(photo);
+        }).toList(),
+      ),
+    );
+
+    final tabBar = TabBar(
+      controller: tabController,
+      indicatorColor: CustomColors.primaryColor,
+      labelColor: CustomColors.primaryColor,
+      unselectedLabelColor: CustomColors.primaryDarkColor.withOpacity(0.8),
+      isScrollable: true,
+      tabs: tabs
+          .map((tabName) => Tab(child: TabBarHead(tabBarName: tabName)))
+          .toList(),
+    );
+
+    final tabBarView = Container(
+      height: screenHeight * 0.4,
+      padding: EdgeInsets.symmetric(horizontal: 20.0),
+      margin: EdgeInsets.only(top: 10.0),
+      child: TabBarView(
+        controller: tabController,
+        children: <Widget>[
+          ProductWidget(
+            colors: widget.product.colors,
+            sizes: widget.product.sizes,
+            changeImageOnColorSelected: changeImageOnColorSelected,
+          ),
+          DetailsWidget(product: widget.product),
+          ReviewsWidget()
+        ],
+      ),
+    );
+
+    final pageElements = Container(
+      height: screenHeight,
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[slider, tabBar, tabBarView],
+        ),
+      ),
+    );
+
     final bottom = Positioned(
       bottom: 0,
       left: 0,
@@ -171,9 +213,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
       child: Container(
         margin: EdgeInsets.only(bottom: 20.0),
         padding: EdgeInsets.symmetric(
-          horizontal: ScreenUtil().setHeight(18) * multiplier,
+          horizontal: 20.0,
         ),
-        // height: ScreenUtil().setHeight(80.0),
         width: MediaQuery.of(context).size.width,
         child: Row(
           children: <Widget>[
@@ -214,56 +255,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
               ),
             ),
           ],
-        ),
-      ),
-    );
-
-    final slider = Container(
-      height: ScreenUtil().setHeight(320) * multiplier,
-      width: double.infinity,
-      // color: Colors.cyan,
-      child: Carousel(
-        key: carouselStateKey,
-        images: widget.product.photos.map((photo) {
-          return ExactAssetImage(photo);
-        }).toList(),
-      ),
-    );
-
-    final tabBar = TabBar(
-      controller: tabController,
-      indicatorColor: CustomColors.primaryColor,
-      labelColor: CustomColors.primaryColor,
-      unselectedLabelColor: CustomColors.primaryDarkColor.withOpacity(0.8),
-      isScrollable: true,
-      tabs: tabs
-          .map((tabName) => Tab(child: TabBarHead(tabBarName: tabName)))
-          .toList(),
-    );
-
-    final tabBarView = Container(
-      height: ScreenUtil().setHeight(280) * multiplier,
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
-      margin: EdgeInsets.only(top: 10.0),
-      child: TabBarView(
-        controller: tabController,
-        children: <Widget>[
-          ProductWidget(
-            colors: widget.product.colors,
-            sizes: widget.product.sizes,
-            changeImageOnColorSelected: changeImageOnColorSelected,
-          ),
-          DetailsWidget(product: widget.product),
-          ReviewsWidget()
-        ],
-      ),
-    );
-
-    final pageElements = Container(
-      height: screenHeight * 0.9,
-      child: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[slider, tabBar, tabBarView],
         ),
       ),
     );

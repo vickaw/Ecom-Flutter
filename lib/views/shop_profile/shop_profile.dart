@@ -115,12 +115,13 @@ class _ShopProfilePageState extends State<ShopProfilePage>
       child: tabBar,
     );
 
-    final tabBarView = Container(
-      height: screenHeight * 0.635,
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
-      child: TabBarView(
-        controller: tabController,
-        children: <Widget>[HomeWidget(), ProductsWidget(), ReviewsWidget()],
+    final tabBarView = Expanded(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        child: TabBarView(
+          controller: tabController,
+          children: <Widget>[HomeWidget(), ProductsWidget(), ReviewsWidget()],
+        ),
       ),
     );
 
