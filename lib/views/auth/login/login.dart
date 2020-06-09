@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../../../services/alert.service.dart';
 import '../../../global_widgets/custom_button.dart';
-import 'package:line_icons/line_icons.dart';
 import '../../../global_widgets/custom_form_field.dart';
 import '../../../global_widgets/form_container.dart';
 import '../../../router.dart';
@@ -34,13 +34,13 @@ class _LoginPageState extends State<LoginPage> {
 
     final emailField = CustomFormField(
       labelText: "Email Address",
-      icon: LineIcons.envelope,
+      icon: FlutterIcons.mail_outline_mdi,
       controller: email,
     );
 
     final passwordField = CustomFormField(
       labelText: "Password",
-      icon: LineIcons.lock,
+      icon: FlutterIcons.lock_outline_mco,
       isPasswordField: true,
       controller: password,
     );

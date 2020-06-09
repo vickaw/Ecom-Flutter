@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../../../global_widgets/custom_button.dart';
-import 'package:line_icons/line_icons.dart';
 import '../../../global_widgets/custom_form_field.dart';
 import '../../../global_widgets/form_container.dart';
 
@@ -9,7 +9,7 @@ class ForgotPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final emailField = CustomFormField(
       labelText: 'EMAIL ADDRESS',
-      icon: LineIcons.envelope,
+      icon: FlutterIcons.mail_outline_mdi,
     );
 
     final formSpace = SizedBox(height: 20.0);

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'widgets/filter_drawer.dart';
 import 'widgets/result_list.dart';
-import 'package:line_icons/line_icons.dart';
 import '../../utils/colors.dart';
 
 class SearchResultsPage extends StatefulWidget {
@@ -75,7 +75,7 @@ class _SearchResultsPageState extends State<SearchResultsPage> {
           backgroundColor: Colors.white,
           leading: IconButton(
             icon: Icon(
-              LineIcons.angle_left,
+              CupertinoIcons.left_chevron,
               color: Colors.black,
             ),
             onPressed: () => Navigator.pop(context),
@@ -83,7 +83,7 @@ class _SearchResultsPageState extends State<SearchResultsPage> {
           actions: <Widget>[
             IconButton(
               icon: Icon(
-                LineIcons.filter,
+                FlutterIcons.filter_outline_mco,
                 color: Colors.black,
               ),
               onPressed: () => toggleDrawer(),

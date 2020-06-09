@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../utils/utils.dart';
 import '../../../models/review.dart';
 
@@ -8,18 +7,8 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 class ReviewsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final double screenHeight = MediaQuery.of(context).size.height;
-    final double screenWidth = MediaQuery.of(context).size.width;
-    ScreenUtil.instance = ScreenUtil(
-      width: screenWidth,
-      height: screenHeight,
-      allowFontScaling: true,
-    )..init(context);
-    final multiplier = screenHeight / screenWidth;
-
-
     return Container(
-       margin: EdgeInsets.only(bottom: ScreenUtil().setHeight(12) * multiplier),
+      margin: EdgeInsets.only(bottom: 20),
       child: ListView(
         children: reviews.map((review) {
           return reviewCard(review: review);
@@ -96,7 +85,7 @@ class ReviewsWidget extends StatelessWidget {
     );
 
     return Container(
-       margin: EdgeInsets.only(bottom: 20.0),
+      margin: EdgeInsets.only(bottom: 50.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[

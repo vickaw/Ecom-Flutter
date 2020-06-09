@@ -1,11 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../../models/message2.dart';
 import '../../models/product.dart';
 import '../../router.dart';
 import '../../utils/colors.dart';
 import '../../utils/utils.dart';
-import 'package:line_icons/line_icons.dart';
 
 class MessageDetailsPage extends StatefulWidget {
   final String name;
@@ -43,11 +43,6 @@ class _MessageDetailsPageState extends State<MessageDetailsPage> {
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
-    ScreenUtil.instance = ScreenUtil(
-      width: screenWidth,
-      height: screenHeight,
-      allowFontScaling: true,
-    )..init(context);
 
     final initials = Padding(
       padding: EdgeInsets.only(right: 15.0),
@@ -81,7 +76,7 @@ class _MessageDetailsPageState extends State<MessageDetailsPage> {
       backgroundColor: Colors.white,
       leading: IconButton(
         icon: Icon(
-          LineIcons.angle_left,
+          CupertinoIcons.left_chevron,
           color: Colors.black,
         ),
         onPressed: () => Navigator.pop(context),
@@ -163,7 +158,7 @@ class _MessageDetailsPageState extends State<MessageDetailsPage> {
     );
 
     final product = Container(
-      height: ScreenUtil().setHeight(110),
+      height: 110,
       color: Colors.white,
       child: Column(
         children: <Widget>[hr, productDetails],
@@ -193,7 +188,7 @@ class _MessageDetailsPageState extends State<MessageDetailsPage> {
       left: 0,
       right: 0,
       child: Container(
-        height: ScreenUtil().setHeight(80),
+        height: 80,
         color: Colors.white,
         child: Row(
           children: <Widget>[
@@ -221,7 +216,7 @@ class _MessageDetailsPageState extends State<MessageDetailsPage> {
               onPressed: () => addMessage(),
               shape: CircleBorder(),
               child: Icon(
-                LineIcons.paper_plane,
+                FlutterIcons.ios_paper_plane_ion,
                 color: Colors.white,
               ),
             ),

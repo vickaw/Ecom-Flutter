@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/colors.dart';
 import '../models/product.dart';
 import '../router.dart';
@@ -11,13 +10,6 @@ class SearchProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
-    final double screenWidth = MediaQuery.of(context).size.width;
-    ScreenUtil.instance = ScreenUtil(
-      width: 388,
-      height: 1600,
-      allowFontScaling: true,
-    )..init(context);
-    final multiplier = screenHeight / screenWidth;
 
     final br = BorderRadius.circular(12.0);
     final image = Padding(
@@ -26,7 +18,7 @@ class SearchProductCard extends StatelessWidget {
         child: Image.asset(
           product.photos[0],
           fit: BoxFit.contain,
-          height: ScreenUtil().setHeight(100) * multiplier,
+          height: screenHeight * 0.1,
         ),
       ),
     );

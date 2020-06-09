@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../../../services/alert.service.dart';
 import '../../../views/auth/widgets/terms_policy_dialog.dart';
 import '../../../global_widgets/custom_button.dart';
-import 'package:line_icons/line_icons.dart';
 import '../../../global_widgets/custom_form_field.dart';
 import '../../../global_widgets/form_container.dart';
 import '../../../router.dart';
@@ -34,19 +34,19 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     final emailField = CustomFormField(
       labelText: "Email Address",
-      icon: LineIcons.envelope,
+      icon: FlutterIcons.mail_outline_mdi,
       controller: email,
     );
 
     final usernameField = CustomFormField(
       labelText: "Name",
-      icon: LineIcons.user,
+      icon: FlutterIcons.user_fea,
       controller: name,
     );
 
     final passwordField = CustomFormField(
       labelText: "Password",
-      icon: LineIcons.lock,
+      icon: FlutterIcons.lock_outline_mco,
       isPasswordField: true,
       controller: password,
     );

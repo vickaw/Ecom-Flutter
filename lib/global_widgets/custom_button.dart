@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../utils/styles.dart';
 
 enum BtnSize { sm, md }
@@ -14,7 +14,7 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     Key key,
     @required this.text,
-    this.iconData = FontAwesomeIcons.angleRight,
+    this.iconData = FlutterIcons.angle_right_faw5s,
     @required this.onPressed,
     this.isInverse = false,
     this.size = BtnSize.md,

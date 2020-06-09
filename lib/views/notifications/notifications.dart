@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:themify_flutter/themify_flutter.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import '../../models/notification.dart';
 import '../../global_widgets/header_text.dart';
 import '../../utils/colors.dart';
@@ -80,19 +80,19 @@ class NotificationsPage extends StatelessWidget {
     switch (notifyType) {
       case NotifyType.arrival:
         color = Color(0xFF49D1C8);
-        iconData = Themify.location_pin;
+        iconData = FlutterIcons.map_pin_fea;
         break;
       case NotifyType.deal:
         color = Color(0xFFADD172);
-        iconData = Themify.bag;
+        iconData = FlutterIcons.shopping_bag_fea;
         break;
       case NotifyType.discount:
         color = Color(0xFFFFB051);
-        iconData = Themify.gift;
+        iconData = FlutterIcons.gift_outline_mco;
         break;
       case NotifyType.shipment:
         color = Color(0xFF8A9BFE);
-        iconData = Themify.truck;
+        iconData = FlutterIcons.truck_fea;
         break;
       default:
         color = Color(0xFF8A9BFE);
