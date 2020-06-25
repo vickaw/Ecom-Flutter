@@ -142,11 +142,11 @@ class _SignUpPageState extends State<SignUpPage> {
           } catch (e) {
 
 
-           print (e);
+           print (e.details);
 
             alert.showAlert(
               context: context,
-              message: ("Password must be 6 characters long"),
+              message: (e.message),
               type: AlertType.error,
             );
 
