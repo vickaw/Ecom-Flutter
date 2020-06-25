@@ -5,9 +5,12 @@ import '../../../global_widgets/custom_button.dart';
 import '../../../global_widgets/custom_form_field.dart';
 import '../../../global_widgets/form_container.dart';
 import '../../../router.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class LoginPage extends StatefulWidget {
   final Function(int) changeTab;
+
 
   LoginPage({Key key, this.changeTab}) : super(key: key);
 
@@ -16,6 +19,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _auth = FirebaseAuth.instance;
   TextEditingController email = new TextEditingController();
   TextEditingController password = new TextEditingController();
 
@@ -62,7 +66,12 @@ class _LoginPageState extends State<LoginPage> {
 
     final submitBtn = CustomButton(
       text: "Log In",
-      onPressed: () {
+      onPressed: () async {
+
+        //setState();
+        setState(() {
+          // showProgress = false;
+        });
         // Validation
         if (email.text.isEmpty) {
           alert.showAlert(
@@ -83,8 +92,28 @@ class _LoginPageState extends State<LoginPage> {
             type: AlertType.error,
           );
         } else {
-          Navigator.of(context).pushNamed(homeViewRoute);
-        }
+
+          // Victor Code to login into Firebase datastore
+          //
+          try {
+            final newUser = await _auth.signInWithEmailAndPassword(
+                email: email.text, password: password.text);
+            print(newUser.toString());
+            if (newUser != null) {
+              Navigator.of(context).pushNamed(homeViewRoute);
+            }
+          } catch (e) {
+            alert.showAlert(
+              context: context,
+              message: "Your username/password do not match",
+              type: AlertType.error,
+            );
+
+
+          }
+
+
+        } // End Victor Code for Login
       },
     );
 
@@ -128,3 +157,4 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+

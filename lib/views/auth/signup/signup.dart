@@ -7,6 +7,7 @@ import '../../../global_widgets/custom_button.dart';
 import '../../../global_widgets/custom_form_field.dart';
 import '../../../global_widgets/form_container.dart';
 import '../../../router.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -14,6 +15,7 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final _auth = FirebaseAuth.instance;
   bool isChecked = false;
   TextEditingController email = new TextEditingController();
   TextEditingController name = new TextEditingController();
@@ -77,7 +79,10 @@ class _SignUpPageState extends State<SignUpPage> {
 
     final submitBtn = CustomButton(
       text: "Sign Up",
-      onPressed: () {
+      onPressed: () async {
+        setState(() {
+          //showProgress = true;
+        });
         if (email.text.isEmpty) {
           alert.showAlert(
             context: context,
@@ -116,7 +121,38 @@ class _SignUpPageState extends State<SignUpPage> {
             type: AlertType.error,
           );
         } else {
-          Navigator.of(context).pushNamed(homeViewRoute);
+         // Victor Code for successful registration
+         // Navigator.of(context).pushNamed(homeViewRoute);
+          try {
+            final newUser = await _auth.createUserWithEmailAndPassword(
+                email: email.text.toString(), password: password.text.toString());
+            if (newUser != null) {
+             // Navigator.push(
+               // context,
+                //MaterialPageRoute(
+                  //  builder: (context) => MyLoginPage()),
+              //);
+
+
+
+              setState(() {
+                //showProgress = false;
+              });
+            }
+          } catch (e) {
+
+
+           print (e);
+
+            alert.showAlert(
+              context: context,
+              message: ("Password must be 6 characters long"),
+              type: AlertType.error,
+            );
+
+          }
+
+
         }
       },
     );
