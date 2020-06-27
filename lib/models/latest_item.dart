@@ -7,7 +7,7 @@ class LatestItem {
 }
 
 List<LatestItem> latestItems = [
-  LatestItem(description: "For all your summer clothing needs", photo: AppImages.woman),
-  LatestItem(description: "Newest men polo fashion silk wears", photo: AppImages.man),
+  LatestItem(description: "Travis vitamin E natural solutions for your skin", photo: AppImages.vitamine),
+  LatestItem(description: "Natural perfumes are gold", photo: AppImages.fragrance),
   LatestItem(description: "Awesome premium quality kids wears", photo: AppImages.kid2),
 ];

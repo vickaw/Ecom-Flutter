@@ -42,15 +42,20 @@ class AppImages {
   static const mascara = 'assets/images/categories/mascara.png';
   static const monitor = 'assets/images/categories/monitor.png';
   static const phone = 'assets/images/categories/phone.png';
+  static const skinfood = 'assets/images/categories/skinfood.png';
+  static const skincare = 'assets/images/categories/skincare.png';
+  static const perfume = 'assets/images/categories/perfume.png';
+  static const accessory = 'assets/images/categories/accessory.png';
+  static const other = 'assets/images/categories/other.png';
   static const shirt = 'assets/images/categories/shirt.png';
   static const sofa = 'assets/images/categories/sofa.png';
   static const homeTheatre = 'assets/images/categories/home_theatre.png';
-
   static const kid = 'assets/images/latest_items/kid.jpg';
   static const kid2 = 'assets/images/latest_items/kid2.jpg';
   static const man = 'assets/images/latest_items/man.jpg';
   static const woman = 'assets/images/latest_items/woman.jpg';
-
+  static const vitamine = 'assets/images/latest_items/vitamine.jpg';
+  static const fragrance = 'assets/images/latest_items/fragrance.jpg';
   static const runningShoesBlack =
       'assets/images/products/runningshoes-black.png';
   static const runningShoesBlue =

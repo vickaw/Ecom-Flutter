@@ -19,9 +19,9 @@ class SubCategory {
 List<Category> categories = [
   Category(
     id: 1,
-    name: "Phones",
+    name: "Skin Food",
     color: "#FF7351",
-    photo: AppImages.phone,
+    photo: AppImages.skinfood,
     subCategories: [
       SubCategory(
         name: "Mobile Phones",
@@ -39,9 +39,9 @@ List<Category> categories = [
   ),
   Category(
     id: 2,
-    name: "Electonics",
+    name: "Skin Care",
     color: "#60B8FD",
-    photo: AppImages.homeTheatre,
+    photo: AppImages.skincare,
     subCategories: [
       SubCategory(
         name: "Home Audio",
@@ -60,9 +60,9 @@ List<Category> categories = [
   ),
   Category(
     id: 3,
-    name: "Computing",
+    name: "Perfumes",
     color: "#3AC341",
-    photo: AppImages.monitor,
+    photo: AppImages.perfume,
     subCategories: [
       SubCategory(
         name: "Computer Accessories",
@@ -76,9 +76,9 @@ List<Category> categories = [
   ),
   Category(
     id: 4,
-    name: "Fashion",
+    name: "Accessories",
     color: "#EC3B7F",
-    photo: AppImages.shirt,
+    photo: AppImages.accessory,
     subCategories: [
       SubCategory(
         name: "Women's Fashion",
@@ -96,9 +96,9 @@ List<Category> categories = [
   ),
   Category(
     id: 5,
-    name: "Home",
+    name: "Other",
     color: "#C1C6F9",
-    photo: AppImages.sofa,
+    photo: AppImages.other,
     subCategories: [
       SubCategory(
         name: "Home & Kitchen",

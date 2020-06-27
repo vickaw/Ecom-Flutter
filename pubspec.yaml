@@ -59,6 +59,11 @@ flutter:
     - assets/images/categories/mascara.png
     - assets/images/categories/monitor.png
     - assets/images/categories/phone.png
+    - assets/images/categories/skinfood.png
+    - assets/images/categories/skincare.png
+    - assets/images/categories/perfume.png
+    - assets/images/categories/accessory.png
+    - assets/images/categories/other.png
     - assets/images/categories/shirt.png
     - assets/images/categories/sofa.png
     - assets/images/categories/home_theatre.png
@@ -66,6 +71,8 @@ flutter:
     - assets/images/latest_items/kid2.jpg
     - assets/images/latest_items/man.jpg
     - assets/images/latest_items/woman.jpg
+    - assets/images/latest_items/vitamine.jpg
+    - assets/images/latest_items/fragrance.jpg
     - assets/images/products/runningshoes-black.png
     - assets/images/products/runningshoes-blue.png
     - assets/images/products/nikeshoe-red.png
